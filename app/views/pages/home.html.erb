@@ -9,15 +9,15 @@
   </div>
   <div class="col-2 homepage_content">
     <h3 class="title">Recent Blog Posts</h3>
-        <h4><a href="#">How I taught myself to develop.</a></h4>
-      <p class="date">Sunday, July 12th 2015</p>
 
-          <h4><a href="#">How I taught myself to develop.</a></h4>
-        <p class="date">Sunday, July 12th 2015</p>
-
-            <h4><a href="#">How I taught myself to develop.</a></h4>
-          <p class="date">Sunday, July 12th 2015</p>
-
-          <button class="btn bordered">View All Posts</button>
+    <% @posts.each do |post| %>
+			<h4><%= link_to post.title, post %></h4>
+			<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+		<% end %>
+    <% if @posts.empty? %>
+      <p>Sorry no posts were found. Check back soon!</p>
+    <% else %>
+      <%= link_to "View All Posts", posts_path, class: "btn bordered" %>
+    <% end %>
   </div>
 </div>
