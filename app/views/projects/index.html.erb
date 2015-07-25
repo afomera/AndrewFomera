@@ -9,7 +9,9 @@
       <p class="description"><%= markdown truncate("#{project.description}", length: 80) %></p>
       <br />
       <%= link_to "Read More", project_path(project), class: "btn bordered" %>
-      <%= link_to "Visit #{project.title}", project.link, class: "btn bordered-light", target: "_blank" %>
+      <% if !project.link.empty? %>
+        <%= link_to "Visit #{project.title}", project.link, class: "btn bordered-light", target: "_blank" %>
+      <% end %>
     <hr />
     </div>
   <% end %>
