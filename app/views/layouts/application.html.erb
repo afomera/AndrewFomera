@@ -11,7 +11,14 @@
 <!-- Render Header -->
   <%= render 'layouts/header' %>
 <!-- End of Header -->
-
+<div>
+  <% flash.each do |key, value| %>
+    <div>
+      <a href="#" data-dismiss="alert">×</a>
+        <%= value %>
+    </div>
+  <% end %>
+</div>
 <%= yield %>
 
 <!-- Render Footer -->
