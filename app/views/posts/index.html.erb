@@ -10,5 +10,11 @@
   		</div>
   	<% end %>
 
+    <% if @posts.empty? %>
+      <div class="post">
+        <h4>Whoops! No posts could be found. <br />Please check back soon!</h4>
+      </div>
+    <% end %>
+
     <%= will_paginate @posts %>
 </div>
