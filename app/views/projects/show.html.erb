@@ -1,0 +1,19 @@
+<div id="project_show_content" class="skinny_container container_padding">
+  <header>
+    <h1><%= @project.title %></h1>
+    <hr>
+  </header>
+  <div id="content">
+    <%= markdown @project.description %>
+  </div>
+  <br />
+  <% if true %>
+		<div id="admin_links">
+			<%= link_to "Edit Project", edit_project_path(@project) %>
+			<%= link_to "Delete Project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>
+		</div>
+	<% end %>
+
+  <hr>
+
+</div>

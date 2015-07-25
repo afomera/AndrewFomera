@@ -1,0 +1,19 @@
+<h1 id="page_title">Stuff I've done</h1>
+
+<div id="projects_list" class="skinny_container container_padding">
+
+  <% @projects.each do |project| %>
+    <div class="project">
+      <h2><%= link_to project.title, project_path(project) %></h2>
+      <img src="http://placehold.it/468x128/0EBFE9">
+      <p class="description"><%= markdown truncate("#{project.description}", length: 80) %></p>
+      <br />
+      <%= link_to "Read More", project_path(project), class: "btn bordered" %>
+      <%= link_to "Visit #{project.title}", project.link, class: "btn bordered-light", target: "_blank" %>
+    <hr />
+    </div>
+  <% end %>
+
+
+      <%= will_paginate @projects %>
+  </div>
