@@ -81,4 +81,6 @@ test:
 #
 production:
   <<: *default
+  database: andrewfomera_production
+  username: andrewfomera
   url: <%= ENV['DATABASE_URL'] %>
