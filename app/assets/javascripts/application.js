@@ -15,3 +15,24 @@
 //= require refile
 //= require turbolinks
 //= require_tree .
+$(document).on("upload:start", "form", function(e) {
+  $(this).find("input[type=submit]").attr("disabled", true)
+});
+
+$(document).on("upload:complete", "form", function(e) {
+  if(!$(this).find("input.uploading").length) {
+    $(this).find("input[type=submit]").removeAttr("disabled")
+  }
+});
+//Notifications fade out after 4.5 seconds or until you click the X icon to dismiss
+$(document).ready(function() {
+    setTimeout(function() {
+        $("#notice_wrapper").fadeOut("slow", function() {
+            $(this).remove();
+        })
+    }, 4500 );
+    $(".alert_close").click(function(e) {
+      e.preventDefault();
+      $(this).closest("#notice_wrapper").remove();
+    })
+});
