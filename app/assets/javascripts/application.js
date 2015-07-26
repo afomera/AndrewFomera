@@ -33,6 +33,6 @@ $(document).ready(function() {
     }, 4500 );
     $(".alert_close").click(function(e) {
       e.preventDefault();
-      $(this).closest("#notice_wrapper").remove();
+      $("#notice_wrapper").remove();
     })
 });
