@@ -16,6 +16,11 @@
     </div>
   <% end %>
 
+      <% if @projects.empty? %>
+        <div class="project">
+          <h4>Whoops! No projects could be found. <br />Please check back soon!</h4>
+        </div>
+      <% end %>
 
       <%= will_paginate @projects %>
   </div>
