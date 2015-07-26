@@ -8,6 +8,17 @@
         </ul>
     <% end %>
 
+    <% if @project.thumbnail_image %>
+      Current Thumbnail <br />
+      <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
+
+      <%= f.check_box :remove_thumbnail_image %>
+      <%= f.label :remove_thumbnail_image %>
+    <% end %> <br><br>
+
+    <%= f.label :thumbnail %><br>
+    <%= f.attachment_field :thumbnail_image, direct: true %>
+    <br><br>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
 

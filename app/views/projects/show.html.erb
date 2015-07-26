@@ -4,6 +4,8 @@
     <hr>
   </header>
   <div id="content">
+    <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
+
     <%= markdown @project.description %>
   </div>
   <br />
