@@ -327,9 +327,9 @@
      a {
          text-decoration: none;
          font-weight: bold;
-         color: $dark;
+         color: $primary;
          &:hover {
-             color: $primary;
+             color: $dark;
          }
        }
  }
@@ -347,9 +347,9 @@
      a {
          text-decoration: none;
          font-weight: bold;
-         color: $dark;
+         color: $primary;
          &:hover {
-             color: $primary;
+             color: $dark;
          }
        }
  }
