@@ -324,6 +324,14 @@
      hr {
          margin: 2em auto;
      }
+     a {
+         text-decoration: none;
+         font-weight: bold;
+         color: $dark;
+         &:hover {
+             color: $primary;
+         }
+       }
  }
 
  #project_show_content {
@@ -336,6 +344,14 @@
      hr {
          margin: 2em auto;
      }
+     a {
+         text-decoration: none;
+         font-weight: bold;
+         color: $dark;
+         &:hover {
+             color: $primary;
+         }
+       }
  }
 
  #share_box {
