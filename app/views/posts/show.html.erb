@@ -4,7 +4,7 @@
       <div class="unpublished">
         <h3>You are viewing a draft post!</h3>
         <% if user_signed_in? && current_user.admin? %>
-          <%= link_to "Publish this Post" %>
+          <%= link_to "Publish this Post", publish_post_path(@post), method: :patch %>
         <% end %>
       </div>
     <% end %>

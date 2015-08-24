@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :publish]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_admin_status, only: [:new, :edit, :update, :create, :destroy]
   def index
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.published = false if save_as_draft?
 
     if @post.save
       redirect_to @post, notice: "Your new post has been saved!"
@@ -28,6 +29,8 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post.published = true if publish?
+    @post.published = false if save_as_draft?
     if @post.update(post_params)
       redirect_to @post, notice: "Alright! Your article was successfully saved!"
     else
@@ -40,6 +43,14 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def publish
+    @post.published = true
+    if @post.save
+      redirect_to @post, notice: "Post has been published!"
+    else
+      redirect_to @post, notice: "An error occured"
+    end
+  end
   private
 
     def post_params
@@ -48,5 +59,13 @@ class PostsController < ApplicationController
 
     def find_post
         @post = Post.friendly.find(params[:id])
+    end
+
+    def save_as_draft?
+      params[:commit] == "Save as Draft"
+    end
+
+    def publish?
+      params[:commit] == "Publish"
     end
 end
