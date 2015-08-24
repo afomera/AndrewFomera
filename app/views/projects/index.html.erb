@@ -23,4 +23,10 @@
       <% end %>
 
       <%= will_paginate @projects %>
+
+      <% if user_signed_in? && current_user.admin? %>
+        <div class="project">
+          <%= link_to "New Project", new_project_path, class: "button" %>
+        </div>
+      <% end %>
   </div>

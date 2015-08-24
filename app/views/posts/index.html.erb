@@ -1,7 +1,6 @@
 <h1 id="page_title">Things I have to say</h1>
 
 <div id="posts_container" class="skinny_container">
-
   <% @posts.each do |post| %>
   		<div class="post">
   			<p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>
@@ -17,4 +16,10 @@
     <% end %>
 
     <%= will_paginate @posts %>
+
+    <% if user_signed_in? && current_user.admin? %>
+      <div class="post">
+        <%= link_to "New Post", new_post_path, class: "button" %>
+      </div>
+    <% end %>
 </div>
