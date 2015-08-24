@@ -1,6 +1,15 @@
 <h1 id="page_title">Things I have to say</h1>
 
 <div id="posts_container" class="skinny_container">
+  <% if user_signed_in? && current_user.admin? %>
+    <% @unpublished_posts.each do |unpublished_post| %>
+      <div class="draft">
+        <p class="date"><%= unpublished_post.created_at.strftime('%A, %B %d') %></p>
+        <h2><%= link_to unpublished_post.title, unpublished_post %></h2>
+        <hr>
+      </div>
+    <% end %>
+  <% end %>
   <% @posts.each do |post| %>
   		<div class="post">
   			<p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>

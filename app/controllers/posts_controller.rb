@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :check_admin_status, only: [:new, :edit, :update, :create, :destroy]
   def index
     @posts = Post.published.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    @unpublished_posts = Post.unpublished.order("created_at DESC")
   end
 
   def new

@@ -5,5 +5,5 @@ class Post < ActiveRecord::Base
   validates_presence_of :content
 
   scope :published, -> { where(published: true) }
-
+  scope :unpublished, -> { where(published: false) }
 end

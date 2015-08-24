@@ -1,5 +1,13 @@
 <div id="post_show_content" class="skinny_container container_padding">
   <header>
+    <% if !@post.published? # If it's not published... %>
+      <div class="unpublished">
+        <h3>You are viewing a draft post!</h3>
+        <% if user_signed_in? && current_user.admin? %>
+          <%= link_to "Publish this Post" %>
+        <% end %>
+      </div>
+    <% end %>
     <p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
     <h1><%= @post.title %></h1>
     <hr>
