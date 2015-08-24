@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, path: ''
   resources :posts
   resources :projects
   resources :contacts, only: [:new, :create], path: "contact"
