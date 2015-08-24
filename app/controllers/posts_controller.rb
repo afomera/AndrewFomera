@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_admin_status, only: [:new, :edit, :update, :create, :destroy]
   def index
-    @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    @posts = Post.published.order("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def new
