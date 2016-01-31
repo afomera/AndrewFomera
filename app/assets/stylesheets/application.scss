@@ -1,460 +1,293 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 
  @import "normalize";
  @import "font-awesome";
  @import 'pygments';
 
- $primary: #94ba65;
- $white: #FFFFFF;
- $dark: #424652;
- $light: #9a9da4;
- $border: #E9E9E9;
- $light: #9a9da4;
- $unpublished_box: rgba(250, 250, 200, 0.95);
- //$unpublished_box: #eeeeee;
 
+// Stuff for the website
+@import "andrewfomera/variables";
+@import "andrewfomera/inputs";
+@import "andrewfomera/draft";
+@import "andrewfomera/pagination";
+@import "andrewfomera/buttons";
+
+// For flash notices
+ @import "andrewfomera/notices";
  * {
-   box-sizing: border-box;
- }
- body {
-   font-family: 'Raleway', sans-serif;
-   background: $white;
- }
-
- #header {
-   padding: 1.9em 5%;
-   border-bottom: 1px solid $border;
-   .brand {
-     font-weight: 700;
-     font-size: 1.1em;
-     letter-spacing: 3px;
-     text-transform: uppercase;
-     border: 3px solid $primary;
-     padding: 0.75rem 1rem;
-     text-decoration: none;
-     color: $dark;
-     float: left;
-   }
-   nav {
-
-     float: right;
-     padding-top: 1rem;
-     a {
-       color: $dark;
-       text-decoration: none;
-       margin: 0 1rem;
-       font-size: 1rem;
-       font-weight: bold;
-     }
-     .current {
-       color: $primary;
-       text-decoration: underline;
-       //border: 2px solid $light;
-     }
-   }
- }
- .container {
-   width: 90%;
-   margin: 0 auto;
-   min-height: 90%;
- }
- .skinny_container {
-   width: 80%;
-   max-width: 768px;
-   margin: 0 auto;
- }
- .container_padding {
-   padding: 2.5rem 0;
- }
- .clearfix:before,
- .clearfix:after {
-   content: " ";
-   display: table;
- }
- .clearfix:after {
-   clear: both;
- }
- h1, h2, h3, h4, h5, h6, p, ul, li {
-   color: $dark;
- }
- h1 {
-   font-size: 2.5rem;
- }
- h2 {
-   font-size: 2rem;
- }
- h3 {
-   font-size: 1.75rem;
- }
- h4 {
-   font-size: 1.375rem;
- }
- h5 {
-   font-size: 1.25rem;
- }
- h6 {
-   font-size: 1rem;
- }
- p, li {
-   font-size: 1.1rem;
-   line-height: 1.75;
- }
- p, ul, ol {
-     margin: 0 0 1.6em 0;
- }
- hr {
-     width: 6em;
-     display: block;
-     height: 2px;
-     border: 0;
-     border-top: 2px solid $primary;
-     margin: 2rem 0;
- }
- .title {
-   text-transform: uppercase;
- }
- .col-1, .col-2 {
-   float: left;
- }
- .col-1 {
-   width: 45%;
-   padding: 0 5% 0 2.5%;
- }
- .col-2 {
-   width: 40%;
-   padding: 0 2.5%;
- }
- .about {
-   padding: 0 4.5% 0 0;
-   a {
-         text-decoration: none;
-         font-weight: 700;
-         font-weight: bold;
-         color: $primary;
-     }
- }
- #footer {
-     padding: 2.5em 5%;
-     border-top: 1px solid $border;
-     .copyright {
-         float: left;
-         font-size: .9em;
-         margin: 0;
-     }
-     nav {
-         float: right;
-         i {
-             color: $dark;
-             margin-left: 1em;
-             padding-top: .2em;
-             &:hover {
-                 color: $primary;
-             }
-         }
-     }
- }
- .homepage_content {
-   h4 {
-        font-size: 1.35em;
-        font-weight: 700;
-        margin-bottom: .4em;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  background: $white;
+}
+label {
+  font-weight: bold;
+}
+#header {
+  padding: 1.5em 5%;
+  border-bottom: 1px solid $border;
+  //background: rgba(193, 226, 58, 0.54);
+  //background: rgba(122, 183, 245, 0.47); blue
+  background: $dark_blue;
+  .brand {
+    font-family: 'Industry Book', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    //letter-spacing: 0.1em;
+    text-transform: uppercase;
+    //border: 3px solid $primary;
+    padding: 0.10rem 1rem;
+    text-decoration: none;
+    color: $white;
+    float: left;
+    &:hover {
+      color: darken($white, 20%);;
     }
+  }
+  nav {
+    float: right;
+    padding: 0.3rem;
     a {
+      font-family: 'Industry Book', sans-serif;
+      color: lighten(#5e6467, 30%);;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      &:hover {
+        color: lighten(#5e6467, 50%);;
+      }
+    }
+  }
+}
+.container {
+  width: 89%;
+  margin: 0 auto;
+  min-height: 90%;
+}
+.skinny_container {
+  width: 80%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.container_padding {
+  padding: 2rem 0;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  color: $dark;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.375rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+p, ul, ol {
+    margin: 0 0 1.6em 0;
+}
+hr {
+    width: 6em;
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid $primary;
+    margin: 2rem 0;
+}
+.title {
+  text-transform: uppercase;
+}
+.col-1 {
+  float: left;
+  width: 45%;
+  padding: 0 5% 0 2.5%;
+}
+.col-2 {
+  float: left;
+  width: 40%;
+  padding: 0 2.5%;
+}
+.about {
+  padding: 0 4.5% 0 0;
+  a {
         text-decoration: none;
+        font-weight: 700;
+        font-weight: bold;
+        color: $primary;
+    }
+}
+#footer {
+    padding: 2.5em 6%;
+    border-top: 1px solid $border;
+    .copyright {
+        float: left;
+        font-size: 0.9em;
+        margin: 0;
+    }
+    nav {
+        float: right;
+        i {
+            color: $dark;
+            margin-left: 1em;
+            padding-top: .2em;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+.homepage_content {
+  h4 {
+       font-size: 1.35em;
+       //font-weight: 400;
+       margin-bottom: .4em;
+   }
+   a {
+       text-decoration: none;
+       color: $dark;
+       &:hover {
+           color: $primary;
+       }
+   }
+   .date {
+       font-size: 1em;
+       margin-bottom: 2em;
+       color: $light;
+   }
+   p {
+       margin: 0 0 .5em 0;
+   }
+}
+
+#page_title {
+    text-align: center;
+    border-bottom: 1px solid $border;
+    padding: 1.2em 0;
+    font-size: 2.0rem;
+    text-transform: uppercase;
+}
+
+#posts_container {
+    padding: 3em 0;
+    .post {
+        text-align: center;
+        .date {
+            font-size: 1.0em;
+            margin: 0;
+        }
+        h2 {
+            margin: 0;
+            font-size: 2em;
+            text-transform: uppercase;
+            a {
+                text-decoration: none;
+                color: $dark;
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+        hr {
+            margin: 3em auto;
+        }
+    }
+}
+
+#projects_list {
+    padding: 2em 0;
+    .project {
+        text-align: center;
+        margin-bottom: 3em;
+        .description {
+            font-size: 1.0em;
+            margin: 0;
+        }
+        h2 {
+            margin: 0;
+            font-size: 2em;
+            text-transform: uppercase;
+            a {
+                text-decoration: none;
+                color: $dark;
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+        hr {
+            margin: 3em auto;
+        }
+    }
+}
+
+#post_show_content {
+    header {
+        text-align: center;
+        .date {
+            font-size: 1em;
+            color: $light;
+            margin: 0;
+        }
+        h1 {
+            margin: 0;
+        }
+    }
+    hr {
+        margin: 2em auto;
+    }
+}
+
+#project_show_content {
+    header {
+        text-align: center;
+        h1 {
+            margin: 0;
+        }
+    }
+    hr {
+        margin: 2em auto;
+    }
+}
+
+#share_box {
+    text-align: center;
+    p {
+        padding: 0 0 1em 0;
+        margin: 0;
+        font-weight: 700;
+        text-transform: uppercase;
         color: $dark;
+        font-size: 1em;
+    }
+    i {
+        color: $dark;
+        padding: 1em 1.5em;
         &:hover {
             color: $primary;
+            cursor: pointer;
         }
     }
-    .date {
-        font-size: 1em;
-        margin-bottom: 2em;
-        color: $light;
-    }
-    p {
-        margin: 0 0 .5em 0;
-    }
- }
-
- #page_title {
-     text-align: center;
-     border-bottom: 1px solid $border;
-     padding: 1.2em 0;
-     font-size: 2.0rem;
-     text-transform: uppercase;
- }
- .btn {
-   padding: 0.5em;
-   background-color: $white;
-   //border: 1px solid $primary;
-   border: none;
-   color:$dark;
-   text-decoration:none;
-   font-size: 1.10em;
-   font-weight: 700;
-   &:hover {
-     color: $primary;
-   }
-   &.bordered {
-     border: 1px solid $primary;
-   }
-   &.bordered-light {
-     border: 1px solid $border;
-   }
- }
- #posts_container {
-     padding: 3em 0;
-     .post {
-         text-align: center;
-         .date {
-             font-size: 1.0em;
-             margin: 0;
-         }
-         h2 {
-             margin: 0;
-             font-size: 2em;
-             text-transform: uppercase;
-             a {
-                 text-decoration: none;
-                 color: $dark;
-                 &:hover {
-                     color: $primary;
-                 }
-             }
-         }
-         h4 {
-           text-align: center;
-         }
-         hr {
-             margin: 3em auto;
-         }
-     }
-     .draft {
-       @extend .post;
-       background: $unpublished_box;
-       hr {
-         margin: 1.5em auto;
-       }
-     }
- }
-
- #projects_list {
-     padding: 2em 0;
-     .project {
-         text-align: center;
-         margin-bottom: 3em;
-         .description {
-             font-size: 1.0em;
-             margin: 0;
-         }
-         h2 {
-             margin: 0;
-             font-size: 2em;
-             text-transform: uppercase;
-             a {
-                 text-decoration: none;
-                 color: $dark;
-                 &:hover {
-                     color: $primary;
-                 }
-             }
-         }
-         hr {
-             margin: 3em auto;
-         }
-     }
- }
- .pagination:before,
- .pagination:after {
-     content: " ";
-     display: table;
- }
-
- .pagination:after {
-     clear:both;
- }
-
- .pagination {
-     text-align: center;
-     margin: 0 0 3em 0;
-     a, .previous_page, .current, .next_page {
-         padding: .75em 1em;
-         margin: 0 .5em;
-         border-radius: .15em;
-         line-height: 20px;
-         text-decoration: none;
-         background: $white;
-         font-weight: 700;
-         font-size: .7em;
-         font-style: normal;
-         color: $dark;
-         &:hover {
-             background: $primary;
-             color: $white;
-         }
-     }
-     .current {
-         background: $primary;
-         color: $white;
-     }
-     .disabled {
-         color: #C0C0C0;
-         &:hover {
-             color: #C0C0C0;
-             background: $white;
-         }
-     }
- }
-
- #post_show_content {
-     header {
-        text-align: center;
-        .unpublished {
-          background: $unpublished_box;
-          border: 2px solid $border;
-          margin-top: 1em;
-          margin-bottom: 2em;
-          padding-top: 1em;
-          padding-bottom: 1em;
-          a {
-            color: $dark;
-            &:hover {
-              color: $primary;
-            }
-          }
-          h3 {
-           color: red;
-         }
-         &:hover {
-           background: darken($unpublished_box, 10%);
-         }
-        }
-        .date {
-             font-size: 1em;
-             color: $light;
-             margin: 0;
-         }
-         h1 {
-             margin: 0;
-         }
-     }
-     hr {
-         margin: 2em auto;
-     }
-     a {
-         text-decoration: none;
-         font-weight: bold;
-         color: $primary;
-         &:hover {
-             color: $dark;
-         }
-       }
- }
-
- #project_show_content {
-     header {
-         text-align: center;
-         h1 {
-             margin: 0;
-         }
-     }
-     hr {
-         margin: 2em auto;
-     }
-     a {
-         text-decoration: none;
-         font-weight: bold;
-         color: $primary;
-         &:hover {
-             color: $dark;
-         }
-       }
- }
-
- #share_box {
-     text-align: center;
-     p {
-         padding: 0 0 1em 0;
-         margin: 0;
-         font-weight: 700;
-         text-transform: uppercase;
-         color: $dark;
-         font-size: 1em;
-     }
-     i {
-         color: $dark;
-         padding: 1em 1.5em;
-         &:hover {
-             color: $primary;
-             cursor: pointer;
-         }
-     }
- }
- input[type="text"], input[type="email"], input[type="password"], textarea {
-     width: 100%;
-     max-width: 100%;
-     height: 3em;
-     border: 2px solid $border;
-     padding: 1em;
-     margin: .5em 0 2em 0;
- }
-
- textarea {
-     min-height: 20em;
- }
-
- input[type="submit"], .button {
-     outline: none;
-     background: transparent;
-     border: 2px solid $border;
-     text-align: center;
-     font-size: 1em;
-     color: $dark;
-     text-decoration: none;
-     padding: 1em 2em;
-     &:hover {
-         border: 2px solid $primary;
-         color: $primary;
-     }
- }
- .hidden {
-     display: none;
- }
- #notice_wrapper {
-     position: absolute;
-     top: 0;
-     width: 100%;
-     z-index: 999;
-     //background: rgba(135, 216, 211, 0.85);
-     background: rgba(18, 168, 101, 0.75);
-     .alert, .notice {
-         padding: 2.5rem 0;
-         text-align: center;
-         margin: 0;
-         font-size: 1.25rem;
-         font-weight: 700;
-         color: #FFFFFF;
-         letter-spacing: 1px;
-     }
-     .alert_close {
-       float: right;
-       padding-right: 4rem;
-       font-size: 1.35rem;
-       color: $white;
-       text-decoration: none;
-     }
- }
+}

@@ -1,0 +1,27 @@
+.draft {
+  @extend .post;
+  background: $unpublished_box;
+  hr {
+    margin: 1.5em auto;
+  }
+}
+.unpublished {
+  background: $unpublished_box;
+  border: 2px solid $border;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  a {
+    color: $dark;
+    &:hover {
+      color: $primary;
+    }
+  }
+  h3 {
+   color: red;
+ }
+ &:hover {
+   background: darken($unpublished_box, 10%);
+ }
+}
