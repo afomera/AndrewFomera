@@ -307,38 +307,51 @@ hr {
 
 //@media only screen and (max-width: 480px) {
 @media (max-width: 480px) {
-    #header {
-      //background: darkred;
-      width: auto;
-      padding: 1.5em 5%;
-      .menu-icon {
-        float: right;
-        display: block;
-        cursor: pointer;
-        i {
-          color: $white;
-        }
-        &:hover {
-          i {
-            color: lighten(#5e6467, 50%);;
-          }
-        }
+  // Make the homepage responsive and look nicer on mobile devices
+  .col-1 {
+    width: auto;
+  }
+  .col-2 {
+    width: auto;
+  }
+  .col-1, .col-2 {
+    padding-bottom: 1em;
+    h3 {
+      text-align: center;
+    }
+  }
+  #header {
+    //background: darkred;
+    width: auto;
+    padding: 1.5em 5%;
+    .menu-icon {
+      float: right;
+      display: block;
+      cursor: pointer;
+      i {
+        color: $white;
       }
-      .nav-menu {
-        top: auto;
-        bottom: auto;
-        left: auto;
-        position: relative;
-        display: none;
-        text-align: center;
-        margin-top: 20px;
-        padding: 10px;
+      &:hover {
         i {
-          float: none;
+          color: lighten(#5e6467, 50%);;
         }
-      }
-      .nav-menu.is-open {
-        display: flex;
       }
     }
+    .nav-menu {
+      top: auto;
+      bottom: auto;
+      left: auto;
+      position: relative;
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      i {
+        float: none;
+      }
+    }
+    .nav-menu.is-open {
+      display: flex;
+    }
+  }
 }
