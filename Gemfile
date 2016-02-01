@@ -59,3 +59,6 @@ gem 'mail_form', '~> 1.5.1'
 gem 'devise'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+
+# Fix turbolinks + jquery
+gem 'jquery-turbolinks'

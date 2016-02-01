@@ -13,6 +13,7 @@
 
 // For flash notices
  @import "andrewfomera/notices";
+
  * {
   box-sizing: border-box;
 }
@@ -289,5 +290,50 @@ hr {
             color: $primary;
             cursor: pointer;
         }
+    }
+}
+.menu-icon {
+  display: none;
+}
+
+//@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
+
+    #header {
+      //background: darkred;
+      width: auto;
+      padding: 1.5em 5%;
+      .menu-icon {
+        float: right;
+        display: block;
+        cursor: pointer;
+        i {
+          color: $white;
+        }
+        &:hover {
+          i {
+            color: lighten(#5e6467, 50%);;
+          }
+        }
+      }
+      .brand {
+      }
+      .nav-menu {
+        top: auto;
+        bottom: auto;
+        left: auto;
+        position: relative;
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        i {
+          float: none;
+        }
+      }
+      .nav-menu.is-open {
+        display: flex;
+      }
+
     }
 }

@@ -1,6 +1,9 @@
 <header id="header" class="clearfix">
       <%= link_to "{AF}", root_path, class: "brand", title: 'Andrew Fomera' %>
-      <nav>
+      <div class="menu-icon">
+        <a rel="nofollow"><%= fa_icon "bars 2x" %></a>
+      </div>
+      <nav id="nav-menu" class="nav-menu">
         <%= link_to projects_path do %>
           <%= fa_icon "th", text: 'Projects' %>
         <% end %>
@@ -16,4 +19,5 @@
           <% end %>
         <% end %>
       </nav>
+
   </header>

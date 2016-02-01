@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require refile
 //= require turbolinks
@@ -34,5 +35,13 @@ $(document).ready(function() {
     $(".alert_close").click(function(e) {
       e.preventDefault();
       $("#notice_wrapper").remove();
+    })
+});
+
+$(document).ready(function() {
+    $(".menu-icon").click(function(e) {
+      e.preventDefault();
+      $(".nav-menu").addClass("is-open");
+      console.log("test click");
     })
 });
