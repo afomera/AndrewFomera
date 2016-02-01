@@ -1,18 +1,17 @@
 
- @import "normalize";
- @import "font-awesome";
+ @import 'normalize';
+ @import 'font-awesome';
  @import 'pygments';
 
-
 // Stuff for the website
-@import "andrewfomera/variables";
-@import "andrewfomera/inputs";
-@import "andrewfomera/draft";
-@import "andrewfomera/pagination";
-@import "andrewfomera/buttons";
+@import 'andrewfomera/variables';
+@import 'andrewfomera/inputs';
+@import 'andrewfomera/draft';
+@import 'andrewfomera/pagination';
+@import 'andrewfomera/buttons';
 
 // For flash notices
- @import "andrewfomera/notices";
+ @import 'andrewfomera/notices';
 
  * {
   box-sizing: border-box;
@@ -298,7 +297,6 @@ hr {
 
 //@media only screen and (max-width: 480px) {
 @media (max-width: 480px) {
-
     #header {
       //background: darkred;
       width: auto;
@@ -316,8 +314,6 @@ hr {
           }
         }
       }
-      .brand {
-      }
       .nav-menu {
         top: auto;
         bottom: auto;
@@ -334,6 +330,5 @@ hr {
       .nav-menu.is-open {
         display: flex;
       }
-
     }
 }
