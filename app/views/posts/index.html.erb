@@ -4,7 +4,7 @@
   <% if user_signed_in? && current_user.admin? %>
     <% @unpublished_posts.each do |unpublished_post| %>
       <div class="draft">
-        <p class="date"><%= unpublished_post.created_at.strftime('%A, %B %d') %></p>
+        <p class="date"><%= unpublished_post.created_at.strftime('%A, %B %d, %Y') %></p>
         <h2><%= link_to unpublished_post.title, unpublished_post %></h2>
         <hr>
       </div>
@@ -12,7 +12,7 @@
   <% end %>
   <% @posts.each do |post| %>
   		<div class="post">
-  			<p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>
+  			<p class="date"><%= post.created_at.strftime('%A, %B %d, %Y') %></p>
   			<h2><%= link_to post.title, post %></h2>
   			<hr>
   		</div>
