@@ -25,19 +25,18 @@ $(document).on("upload:complete", "form", function(e) {
     $(this).find("input[type=submit]").removeAttr("disabled")
   }
 });
-//Notifications fade out after 4.5 seconds or until you click the X icon to dismiss
+//New Notificiation JS Auto-Close
 $(document).ready(function() {
     setTimeout(function() {
-        $("#notice_wrapper").fadeOut("slow", function() {
+        $(".notice_wrapper").fadeOut("slow", function() {
             $(this).remove();
         })
-    }, 4500 );
-    $(".alert_close").click(function(e) {
+    }, 5500 );
+    $(".alert-close").click(function(e) {
       e.preventDefault();
-      $("#notice_wrapper").remove();
+      $(".notice_wrapper").remove();
     })
 });
-
 $(document).ready(function() {
     $(".menu-icon").click(function(e) {
       e.preventDefault();

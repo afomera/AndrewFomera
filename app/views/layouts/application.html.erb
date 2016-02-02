@@ -15,10 +15,9 @@
   <%= render 'layouts/header' %>
 <!-- End of Header -->
   <% flash.each do |key, value| %>
-    <div id="notice_wrapper">
+    <div class="notice_wrapper">
       <div class="<%= key %>">
-
-        <i class="fa fa-times-circle fa-4x alert_close"></i>
+        <i class="fa fa-times-circle alert-close"></i>
           <%= value %>
       </div>
     </div>
