@@ -1,3 +1,5 @@
+<% page_title "#{@post.title}" %>
+<% meta_description "#{@post.content}" %>
 <div id="post_show_content" class="skinny_container container_padding">
   <header>
     <% if !@post.published? # If it's not published... %>
