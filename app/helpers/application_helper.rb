@@ -11,6 +11,12 @@ module ApplicationHelper
     def block_code(code, language)
       Pygments.highlight(code, lexer: language)
     end
+
+    def block_html(raw_html)
+      if raw_html =~ /^<iframe.*>$/ # You may want to optimize this.
+        raw_html
+      end
+    end
   end
 
   def markdown(content)
