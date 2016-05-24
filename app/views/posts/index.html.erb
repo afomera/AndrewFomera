@@ -10,18 +10,16 @@
       </div>
     <% end %>
   <% end %>
-  <% @posts.each do |post| %>
-  		<div class="post">
-  			<p class="date"><%= post.created_at.strftime('%A, %B %d, %Y') %></p>
-  			<h2><%= link_to post.title, post %></h2>
-  			<hr>
-  		</div>
-  	<% end %>
+
 
     <% if @posts.empty? %>
       <div class="post">
         <h4>Whoops! No posts could be found. <br />Please check back soon!</h4>
       </div>
+    <% else %>
+
+      <%= render @posts %>
+
     <% end %>
 
     <%= will_paginate @posts %>
