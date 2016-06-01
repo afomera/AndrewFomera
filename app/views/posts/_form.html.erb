@@ -1,4 +1,4 @@
-<%= form_for @post do |f| %>
+<%= form_for @post, data: {behavior: 'post-form'} do |f| %>
     <% if @post.errors.any? %>
         <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
         <ul>
@@ -15,12 +15,16 @@
     <br>
 
     <%= f.label :content, "Write your article here" %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, data: {behavior: 'post-content'} %>
 
     <br>
     <br>
-    
+
     <%= f.submit "Publish", class: "btn border" %>
     <%= f.submit "Save as Draft" %>
-
 <% end %>
+<hr>
+<h3>Preview</h3>
+
+<div id="preview" data-behavior='post-preview'>
+</div>

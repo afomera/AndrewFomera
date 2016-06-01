@@ -15,7 +15,10 @@
 //= require jquery_ujs
 //= require refile
 //= require turbolinks
+//= require marked
 //= require_tree .
+
+
 $(document).on("upload:start", "form", function(e) {
   $(this).find("input[type=submit]").attr("disabled", true)
 });
