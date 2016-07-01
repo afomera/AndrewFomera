@@ -4,7 +4,9 @@
     <hr>
   </header>
   <div id="content">
-    <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
+    <% if @project.has_thumbnail_image? %>
+      <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
+    <% end %>
 
     <%= markdown @project.description %>
   </div>
