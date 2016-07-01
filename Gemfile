@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 5.0'
+gem 'turbolinks', '~> 2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
@@ -58,14 +58,15 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "font-awesome-rails"
-gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate', '~> 3'
 gem 'pygments.rb', '~> 0.6.0'
 gem 'redcarpet', '~> 3.2.2'
 gem 'friendly_id', '~> 5.1.0'
-gem 'mail_form', path: "/Users/andrew/Projects/mail_form"
+gem 'mail_form', github: "king601/mail_form"
 gem 'devise', '~> 4.1'
-gem "refile", require: "refile/rails"
-#gem "refile-mini_magick" TODO: FIXME: Check into this, was causing issues with Rails 5 upgrade
+gem 'refile', github: 'refile/refile', require: 'refile/rails'
+gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
+gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 
 # Fix turbolinks + jquery
 gem 'jquery-turbolinks'

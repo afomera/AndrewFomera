@@ -43,7 +43,11 @@ $(document).ready(function() {
 $(document).ready(function() {
     $(".menu-icon").click(function(e) {
       e.preventDefault();
-      $(".nav-menu").addClass("is-open");
-      console.log("test click");
+      if ($(".nav-menu").hasClass("is-open")){
+        $(".nav-menu").removeClass("is-open");
+      } else {
+        $(".nav-menu").addClass("is-open");
+        console.log("menu opened");
+      };
     })
 });
