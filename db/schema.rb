@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -23,9 +22,8 @@ ActiveRecord::Schema.define(version: 20150824004230) do
     t.datetime "updated_at",                null: false
     t.string   "slug"
     t.boolean  "published",  default: true, null: false
+    t.index ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
   end
-
-  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -35,9 +33,8 @@ ActiveRecord::Schema.define(version: 20150824004230) do
     t.datetime "updated_at",         null: false
     t.string   "slug"
     t.string   "thumbnail_image_id"
+    t.index ["slug"], name: "index_projects_on_slug", unique: true, using: :btree
   end
-
-  add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -53,9 +50,8 @@ ActiveRecord::Schema.define(version: 20150824004230) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
