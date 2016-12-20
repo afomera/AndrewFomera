@@ -16,7 +16,6 @@ class PostPreview
 
   handlePreview: =>
     html = marked @commentField.val()
-    console.log("preview rendered");
     document.getElementById('preview').innerHTML = html;
 
 jQuery ->
