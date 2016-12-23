@@ -4,12 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   private
-    def check_admin_status
-      authenticate_user!
-      if current_user.admin
-        return
-      else
-        redirect_to root_path, notice: "Sorry, you do not have permission to do that."
-      end
-    end
+
+  def check_admin_status
+    authenticate_user!
+    redirect_to_root unless current_user.admin?
+  end
+
+  def redirect_to_root
+    flash[:notice] = "Sorry, you do not have permission to do that."
+    redirect_to root_path
+  end
 end
