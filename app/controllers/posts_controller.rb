@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy, :publish]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_admin_status, only: [:new, :edit, :update, :create, :destroy]
+
   def index
     @posts = Post.published.order("created_at DESC").paginate(page: params[:page], per_page: 10)
     @unpublished_posts = Post.unpublished.order("created_at DESC")
@@ -51,21 +52,22 @@ class PostsController < ApplicationController
       redirect_to @post, notice: "An error occured"
     end
   end
+
   private
 
-    def post_params
-      params.require(:post).permit(:title, :content, :slug)
-    end
+  def post_params
+    params.require(:post).permit(:title, :content, :slug)
+  end
 
-    def find_post
-        @post = Post.friendly.find(params[:id])
-    end
+  def find_post
+      @post = Post.friendly.find(params[:id])
+  end
 
-    def save_as_draft?
-      params[:commit] == "Save as Draft"
-    end
+  def save_as_draft?
+    params[:commit] == "Save as Draft"
+  end
 
-    def publish?
-      params[:commit] == "Publish"
-    end
+  def publish?
+    params[:commit] == "Publish"
+  end
 end
