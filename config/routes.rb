@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :projects
   root 'pages#home'
 
-  namespace :api, constraints: { format: 'json' } do
+  namespace :api, defaults: { format: :json }, constraints: { format: 'json' } do
     namespace :v1 do
       resources :posts
     end
