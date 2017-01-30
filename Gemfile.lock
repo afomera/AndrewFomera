@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/king601/mail_form.git
+  remote: https://github.com/king601/mail_form.git
   revision: 7f90540ebc19e9630f916ca0bac6cb43f06f98f5
   specs:
     mail_form (1.5.0)
@@ -7,7 +7,7 @@ GIT
       activemodel (>= 3.2, < 5.1)
 
 GIT
-  remote: git://github.com/refile/refile-mini_magick.git
+  remote: https://github.com/refile/refile-mini_magick.git
   revision: 27b6c6c7affcc302a59068b8b3f458cb147c2fa6
   specs:
     refile-mini_magick (0.2.0)
@@ -16,7 +16,7 @@ GIT
       refile (~> 0.5)
 
 GIT
-  remote: git://github.com/refile/refile.git
+  remote: https://github.com/refile/refile.git
   revision: d7a42dcd7cf631ba94b01231f535bda061f6af92
   specs:
     refile (0.6.2)
@@ -25,8 +25,8 @@ GIT
       sinatra (>= 1.4.5)
 
 GIT
-  remote: git://github.com/sinatra/sinatra.git
-  revision: 9f4100a769bc62a8087a12511f26ea895e5e09c5
+  remote: https://github.com/sinatra/sinatra.git
+  revision: 272fe3a112658a84eac9f783a25ea74996198dde
   branch: master
   specs:
     rack-protection (2.0.0.beta2)
@@ -38,7 +38,7 @@ GIT
       tilt (~> 2.0)
 
 GIT
-  remote: git://github.com/turbolinks/turbolinks-classic.git
+  remote: https://github.com/turbolinks/turbolinks-classic.git
   revision: 37a7c296232d20a61bd1946f600da7f2009189db
   specs:
     turbolinks (3.0.0)
