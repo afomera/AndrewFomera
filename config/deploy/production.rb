@@ -8,11 +8,11 @@ role :app, %w{deploy@a02.athensmc.com}
 role :web, %w{deploy@a02.athensmc.com}
 role :db,  %w{deploy@a02.athensmc.com}
 
-set :rvm_type, :user                     # Defaults to: :auto
-set :rvm_ruby_version, '2.3.1'
-set :bundle_path, nil
-set :bundle_binstubs, nil
-set :bundle_flags, '--system'
+
+set :bundle_jobs, 4 # default: nil, only available for Bundler >= 1.4
+# set :bundle_path, nil
+# set :bundle_binstubs, nil
+# set :bundle_flags, '--system'
 
 # Extended Server Syntax
 # ======================
@@ -21,7 +21,6 @@ set :bundle_flags, '--system'
 # used to set extended properties on the server.
 
 server 'a02.athensmc.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-
 
 # Custom SSH Options
 # ==================
