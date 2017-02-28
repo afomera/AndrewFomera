@@ -18,6 +18,6 @@ class PostPreview
     html = marked @commentField.val()
     document.getElementById('preview').innerHTML = html;
 
-jQuery ->
+document.addEventListener 'turbolinks:load', ->
   $.each $("[data-behavior='post-form']"), (i, element)->
     new PostPreview(element)

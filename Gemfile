@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
-gem 'turbolinks', github: 'turbolinks/turbolinks-classic' # Turbolinks 5 upgrade soon..
+gem 'turbolinks'
 gem 'jbuilder', '~> 2.6'
 
 group :development do
@@ -26,7 +26,6 @@ group :development do
 
   gem 'web-console'
 end
-
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -51,5 +50,3 @@ gem 'devise', '~> 4.2'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
-
-gem 'jquery-turbolinks'

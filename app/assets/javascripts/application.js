@@ -11,10 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require refile
 //= require turbolinks
+//= require refile
 //= require marked
 //= require_tree .
 
@@ -28,26 +27,26 @@ $(document).on("upload:complete", "form", function(e) {
     $(this).find("input[type=submit]").removeAttr("disabled")
   }
 });
-//New Notificiation JS Auto-Close
-$(document).ready(function() {
-    setTimeout(function() {
-        $(".notice_wrapper").fadeOut("slow", function() {
-            $(this).remove();
-        })
-    }, 5500 );
-    $(".alert-close").click(function(e) {
-      e.preventDefault();
-      $(".notice_wrapper").remove();
-    })
-});
-$(document).ready(function() {
-    $(".menu-icon").click(function(e) {
-      e.preventDefault();
-      if ($(".nav-menu").hasClass("is-open")){
-        $(".nav-menu").removeClass("is-open");
-      } else {
-        $(".nav-menu").addClass("is-open");
-        console.log("menu opened");
-      };
-    })
+
+document.addEventListener("turbolinks:load", function() {
+  // Menu for navigation
+  $(".menu-icon").click(function(e) {
+    e.preventDefault();
+    if ($(".nav-menu").hasClass("is-open")){
+      $(".nav-menu").removeClass("is-open");
+    } else {
+      $(".nav-menu").addClass("is-open");
+    };
+  })
+
+  // Menu Timeout for Flash Alerts
+  setTimeout(function() {
+      $(".notice_wrapper").fadeOut("slow", function() {
+          $(this).remove();
+      })
+  }, 5500 );
+  $(".alert-close").click(function(e) {
+    e.preventDefault();
+    $(".notice_wrapper").remove();
+  })
 });
