@@ -35,11 +35,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
      assert_response :success
    end
 
-   # TODO: Fix update test
    test 'should update post' do
-     skip
      patch post_url(@post), params: update_params
-     assert_redirected_to post_path(@post)
+     assert_equal 'Updated Title', @post.reload.title
    end
 
    test 'should destroy post' do
