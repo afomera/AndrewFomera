@@ -17,7 +17,6 @@
 //= require marked
 //= require_tree .
 
-
 $(document).on("upload:start", "form", function(e) {
   $(this).find("input[type=submit]").attr("disabled", true)
 });
