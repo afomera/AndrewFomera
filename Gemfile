@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.0.2'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3'
@@ -31,13 +31,13 @@ gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 group :development do
   # Use Capistrano for deployment
   gem 'capistrano', '3.8.0'
-  gem 'capistrano-bundler', '~> 1.1.4'
-  gem 'capistrano-rails', '~> 1.1.2'
+  gem 'capistrano-bundler', '~> 1.2.0'
+  gem 'capistrano-rails', '~> 1.2.3'
   gem 'capistrano-passenger', '~> 0.2.0'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'puma', '~> 3'
 
-  gem 'web-console'
+  gem 'web-console', '~> 3.5.0'
 end
 
 group :development, :test do
