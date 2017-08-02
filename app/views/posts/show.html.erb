@@ -1,40 +1,63 @@
 <% page_title "#{@post.title}" %>
 <% meta_description "#{@post.content}" %>
-<div id="post_show_content" class="skinny_container container_padding">
-  <header>
-    <% if !@post.published? # If it's not published... %>
-      <div class="unpublished">
-        <h3>You are viewing a draft post!</h3>
-        <% if user_signed_in? && current_user.admin? %>
-          <%= link_to "Publish this Post", publish_post_path(@post), method: :patch %>
-        <% end %>
-      </div>
+
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @post.title %>
+      </h1>
+      <h2 class="subtitle">
+        <%= @post.created_at.strftime('%A, %B %d, %Y') %>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<% unless @post.published? # If it's not published... %>
+  <div class="notification is-warning">
+    You are viewing a draft post! -- Please do not share this post.
+    <% if user_signed_in? && current_user.admin? %>
+      <%= link_to "Publish this Post", publish_post_path(@post),
+        method: :patch, class: "button is-light" %>
     <% end %>
-    <p class="date"><%= @post.created_at.strftime('%A, %B %d, %Y') %></p>
-    <h1><%= @post.title %></h1>
-    <hr>
-  </header>
-  <div id="content">
-    <%= markdown @post.content %>
   </div>
-  <br />
-  <% if user_signed_in? && current_user.admin? %>
-		<div id="admin_links">
-			<%= link_to "Edit Article", edit_post_path(@post) %>
-			<%= link_to "Delete Article", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete #{@post.title}?" } %>
-		</div>
-	<% end %>
+<% end %>
 
-  <hr>
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <%= markdown @post.content %>
 
-  <div id="share_box">
-      <p>Share <%= @post.title %></p>
-      <!-- Twitter -->
-        <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @AndrewFomera - &amp;url=<%= post_url([@post]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
-      <!-- Facebook -->
-        <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
-      <!-- Google Plus -->
-        <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+      <% if user_signed_in? && current_user.admin? %>
+        <nav class="level">
+          <div class="level-left"></div> <!-- Do not remove this level-left -->
+          <div class="level-right">
+            <p class="level-item">
+              <%= link_to "Edit Article", edit_post_path(@post),
+                class: "button is-light" %>
+              <%= link_to "Delete Article", post_path(@post),
+                method: :delete, data: {
+                  confirm: "Are you sure you want to delete #{@post.title}?"
+                }, class: "button is-danger" %>
+            </p>
+          </div>
+        </nav>
+      <% end %>
+
+      <hr>
+
+      <div id="share_box">
+        <p>Share <%= @post.title %></p>
+        <!-- Twitter -->
+          <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @AndrewFomera - &amp;url=<%= post_url([@post]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
+        <!-- Facebook -->
+          <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
+        <!-- Google Plus -->
+          <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+      </div>
+      <hr>
+      </div>
+    </div>
   </div>
-  <hr>
 </div>

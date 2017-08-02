@@ -11,32 +11,48 @@
   </div>
 </section>
 
-<div id="posts_container" class="skinny_container">
-  <% if user_signed_in? && current_user.admin? %>
-    <% @unpublished_posts.each do |unpublished_post| %>
-      <div class="draft">
-        <p class="date"><%= unpublished_post.created_at.strftime('%A, %B %d, %Y') %></p>
-        <h2><%= link_to unpublished_post.title, unpublished_post %></h2>
-        <hr>
-      </div>
-    <% end %>
-  <% end %>
 
-    <% if @posts.empty? %>
-      <div class="post">
-        <h4>Whoops! No posts could be found. <br />Please check back soon!</h4>
-      </div>
-    <% else %>
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <% if @posts.empty? %>
+        <div class="card">
+          <div class="card-content">
+            <p class="title">
+              Whoops! No projects could be found!
+            </p>
+            <p class="subtitle">
+              Please check back soon.
+            </p>
+          </div>
+        </div>
+      <% end %>
 
-      <%= render @posts %>
+      <% if user_signed_in? && current_user.admin? %>
+        <% @unpublished_posts.each do |unpublished_post| %>
+          <div class="draft">DRAFT:
+            <p class="date"><%= unpublished_post.created_at.strftime('%A, %B %d, %Y') %></p>
+            <h2><%= link_to unpublished_post.title, unpublished_post %></h2>
+            <hr>
+          </div>
+        <% end %>
+      <% end %>
 
-    <% end %>
+      <%= render(@posts) %>
 
-    <%= will_paginate @posts %>
+      <%= will_paginate @posts %>
 
-    <% if user_signed_in? && current_user.admin? %>
-      <div class="post">
-        <%= link_to "New Post", new_post_path, class: "button" %>
-      </div>
-    <% end %>
+      <% if user_signed_in? && current_user.admin? %>
+        <nav class="level">
+          <div class="level-left"></div> <!-- Do not remove this level-left -->
+          <div class="level-right">
+            <p class="level-item">
+              <%= link_to "New Post", new_post_path,
+                class: "button is-primary" %>
+            </p>
+          </div>
+        </nav>
+      <% end %>
+    </div>
+  </div>
 </div>
