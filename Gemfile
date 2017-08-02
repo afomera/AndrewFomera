@@ -28,6 +28,8 @@ gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 
+gem 'bulma-rails'#, github: 'davidwessman/bulma-rails'
+
 group :development do
   # Use Capistrano for deployment
   gem 'capistrano', '3.8.0'

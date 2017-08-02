@@ -1,26 +1,43 @@
-<h1 id="page_title">Want to talk about something?</h1>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Get in touch
+      </h1>
+      <h2 class="subtitle">
+        Have a project in mind? Want to work together? Get in touch and we'll make things happen.
+      </h2>
+    </div>
+  </div>
+</section>
 
-<div class="skinny_container container_padding">
-    <p>Have a project in mind? Want to work together? Get in touch and we'll make things happen.</p>
-    <%= form_for @contact do |f| %>
-        <%= f.label :name %><br>
-        <%= f.text_field :name, required: true %>
-
-        <br>
-
-        <%= f.label :email %><br>
-        <%= f.email_field :email, required: true %>
-
-        <br>
-
-        <%= f.label :message %><br>
-        <%= f.text_area :message, as: :text %>
-
-        <div class="hidden">
-            <%= f.label :nickname %><br>
-            <%= f.text_field :nickname, hint: 'leave this field blank' %>
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <%= form_for @contact do |f| %>
+        <div class="field">
+          <%= f.label :name, class: "label" %>
+          <%= f.text_field :name, required: true, class: "control input" %>
         </div>
 
-        <%= f.submit 'Send Message', class: "button" %>
-    <% end %>
+        <div class="field">
+          <%= f.label :email, class: "label" %>
+          <%= f.email_field :email, required: true, class: "control input" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :message, class: "label" %>
+          <%= f.text_area :message, as: :text, class: "control textarea" %>
+        </div>
+
+        <div class="field is-hidden">
+          <%= f.label :nickname, class: "label" %>
+          <%= f.text_field :nickname, hint: 'leave this field blank',
+            class: "control input" %>
+        </div>
+
+        <%= f.submit "Send Message", class: "button is-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
