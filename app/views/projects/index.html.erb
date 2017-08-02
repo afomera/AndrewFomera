@@ -11,25 +11,37 @@
   </div>
 </section>
 
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <% if @projects.empty? %>
+        <div class="card">
+          <div class="card-content">
+            <p class="title">
+              Whoops! No projects could be found!
+            </p>
+            <p class="subtitle">
+              Please check back soon.
+            </p>
+          </div>
+        </div>
+      <% end %>
 
-<div id="projects_list" class="skinny_container container_padding">
+      <%= render(@projects) %>
 
-
-  <div class="container container-content">
-    <div class="columns">
-      <div class="column">
-        <% if @projects.empty? %>
-            <h4>Whoops! No projects could be found. <br />Please check back soon!</h4>
-        <% end %>
-
-        <%= render(@projects) %>
-
-        <%= will_paginate @projects %>
-
-        <% if user_signed_in? && current_user.admin? %>
-          <%= link_to "New Project", new_project_path,
-            class: "button is-primary" %>
-        <% end %>
-      </div>
+      <%= will_paginate @projects %>
     </div>
   </div>
+
+  <% if user_signed_in? && current_user.admin? %>
+    <nav class="level">
+      <div class="level-left"></div> <!-- Do not remove this level-left -->
+      <div class="level-right">
+        <p class="level-item">
+          <%= link_to "New Project", new_project_path,
+            class: "button is-primary" %>
+        </p>
+      </div>
+    </nav>
+  <% end %>
+</div>

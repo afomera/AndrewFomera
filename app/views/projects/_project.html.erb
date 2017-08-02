@@ -1,11 +1,18 @@
-<div class="project">
-  <h2><%= link_to project.title, project_path(project) %></h2>
-  <!--<img src="http://placehold.it/468x128/0EBFE9">-->
-  <p class="description"><%= markdown truncate("#{project.description}", length: 80) %></p>
-  <br />
-  <%= link_to "Read More", project_path(project), class: "btn bordered" %>
-  <% if !project.link.empty? %>
-    <%= link_to "Visit #{project.title}", project.link, class: "btn bordered-light", target: "_blank" %>
-  <% end %>
-<hr />
+<div class="card">
+  <header class="card-header">
+    <%= link_to project.title, project_path(project), class: "card-header-title" %>
+  </header>
+
+  <div class="card-content">
+    <div class="content">
+      <%= markdown truncate("#{project.description}", length: 80) %>
+
+      <%= link_to "Read More", project_path(project), class: "button is-primary is-bordered" %>
+
+      <% if project.link.present? %>
+        <%= link_to "Visit #{project.title}", project.link, class: "button is-bordered", target: "_blank" %>
+      <% end %>
+    </div>
+  </div>
 </div>
+<hr />
