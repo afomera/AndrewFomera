@@ -28,16 +28,6 @@ $(document).on("upload:complete", "form", function(e) {
 });
 
 document.addEventListener("turbolinks:load", function() {
-  // Menu for navigation
-  $(".menu-icon").click(function(e) {
-    e.preventDefault();
-    if ($(".nav-menu").hasClass("is-open")){
-      $(".nav-menu").removeClass("is-open");
-    } else {
-      $(".nav-menu").addClass("is-open");
-    };
-  })
-
   // Menu Timeout for Flash Alerts
   setTimeout(function() {
       $(".notice_wrapper").fadeOut("slow", function() {
