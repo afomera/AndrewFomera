@@ -9,7 +9,15 @@
     min-height: 100vh;
     flex-direction: column;
   }
-
+  p, li {
+    line-height: 1.55;
+  }
+  p, ul, ol {
+    margin: 0 0 1em 0;
+  }
+  ul, ol {
+    padding-left: 1em;
+  }
   .wrapper {
    flex: 1;
   }
