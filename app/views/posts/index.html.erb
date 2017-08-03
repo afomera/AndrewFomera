@@ -40,7 +40,7 @@
 
       <%= render(@posts) %>
 
-      <%= will_paginate @posts %>
+      <%= will_paginate @posts, renderer: BulmaPagination::Rails %>
 
       <% if user_signed_in? && current_user.admin? %>
         <nav class="level">

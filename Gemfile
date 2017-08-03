@@ -29,6 +29,7 @@ gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 
 gem 'bulma-rails'
+gem 'will_paginate-bulma'
 
 group :development do
   # Use Capistrano for deployment

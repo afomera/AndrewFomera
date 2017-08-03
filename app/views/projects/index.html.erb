@@ -29,7 +29,7 @@
 
       <%= render(@projects) %>
 
-      <%= will_paginate @projects %>
+      <%= will_paginate @projects, renderer: BulmaPagination::Rails %>
     </div>
   </div>
   <% if user_signed_in? && current_user.admin? %>
