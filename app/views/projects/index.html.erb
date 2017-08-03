@@ -1,4 +1,4 @@
-<section class="hero is-info">
+<section class="hero is-light">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -32,16 +32,17 @@
       <%= will_paginate @projects %>
     </div>
   </div>
-
   <% if user_signed_in? && current_user.admin? %>
-    <nav class="level">
-      <div class="level-left"></div> <!-- Do not remove this level-left -->
-      <div class="level-right">
-        <p class="level-item">
-          <%= link_to "New Project", new_project_path,
-            class: "button is-primary" %>
-        </p>
+      <div class="container">
+        <nav class="level">
+          <div class="level-left"></div> <!-- Do not remove this level-left -->
+          <div class="level-right">
+            <p class="level-item">
+              <%= link_to "New Project", new_project_path,
+                class: "button is-primary" %>
+            </p>
+          </div>
+        </nav>
       </div>
-    </nav>
   <% end %>
 </div>

@@ -4,6 +4,20 @@
  @import "pygments";
  @import "andrewfomera/variables";
 
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .wrapper {
+   flex: 1;
+  }
+
+  .level {
+    padding-bottom: 2em;
+  }
+
   .navbar-brand {
     font-weight: bold;
     font-size: 24px;
@@ -12,20 +26,6 @@
   .container-content {
     padding-top: 2em;
   }
-  .container-footer {
-    margin-top: 4em;
-  }
-
-// @import 'andrewfomera/pagination';
-//
-// * {
-//   box-sizing: border-box;
-// }
-// body {
-//   font-family: 'Raleway', sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   background: $white;
-// }
 
   h1, h2, h3, h4, h5, h6, p, ul, li {
     color: $dark;

@@ -40,10 +40,12 @@
       </div>
     <% end %>
 
-    <%= yield %>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
 
     <!-- Render Footer -->
-      <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
     <!-- End of Footer -->
   </body>
 </html>
