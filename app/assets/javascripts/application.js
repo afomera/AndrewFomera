@@ -28,26 +28,11 @@ $(document).on("upload:complete", "form", function(e) {
 });
 
 document.addEventListener("turbolinks:load", function() {
-  // Menu Timeout for Flash Alerts
-  setTimeout(function() {
-      $(".notice_wrapper").fadeOut("slow", function() {
-          $(this).remove();
-      })
-  }, 5500 );
-  $(".alert-close").click(function(e) {
-    e.preventDefault();
-    $(".notice_wrapper").remove();
-  })
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-
   // Get all "navbar-burger" elements
   var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
   // Check if there are any nav burgers
   if ($navbarBurgers.length > 0) {
-
     // Add a click event on each of them
     $navbarBurgers.forEach(function ($el) {
       $el.addEventListener('click', function () {
@@ -64,4 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Menu Timeout for Flash Alerts
+  setTimeout(function() {
+      $(".notice_wrapper").fadeOut("slow", function() {
+          $(this).remove();
+      })
+  }, 5500 );
+  $(".alert-close").click(function(e) {
+    e.preventDefault();
+    $(".notice_wrapper").remove();
+  })
 });

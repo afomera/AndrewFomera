@@ -11,31 +11,60 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title">Recent Posts</h1>
+    <h2 class="subtitle">
+      Three of my most recent posts
+    </h2>
 
+    <% @posts.each do |post| %>
+      <h5><%= link_to post.title, post %></h5>
+      <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+    <% end %>
 
-<div class="container container-content">
-  <div class="columns is-centered">
-    <div class="column is-half">
-      <p>
-        I'm passionate about learning new things everyday and work to expand my skills. I'm a big fan of blogging or sharing what you're learning and strive to do so when possible.
-      </p>
-
-      <p>You can find me on <a href="https://twitter.com/AndrewFomera">Twitter</a> or on other social media sites by looking up Andrew Fomera.
-        If you like checking out code you can find me on <%= link_to "GitHub", "https://github.com/king601" %>. </p>
-    </div>
-
-    <div class="column is-half">
-      <h3 class="title">Recent Blog Posts</h3>
-      <% @posts.each do |post| %>
-        <h4><%= link_to post.title, post %></h4>
-        <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
-      <% end %>
-      <% if @posts.empty? %>
-        <p>Sorry no posts were found. Check back soon!</p>
-      <% else %>
-        <%= link_to "View All Posts", posts_path, class: "btn bordered" %>
-      <% end %>
-    </div>
-
+      <%= link_to "View All Posts", posts_path, class: "button is-borered" %>
   </div>
-</div>
+</section>
+
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Always striving for improvement
+      </h1>
+      <h2 class="subtitle">
+        I'm passionate about learning new things everyday and work to expand my skills.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Find me
+      </h1>
+      <h2 class="subtitle">
+      <p>You can find me on <a href="https://twitter.com/AndrewFomera">Twitter</a> or on other social media sites by looking up Andrew Fomera.</p>
+      <p>
+        If you like checking out code you can find me on <%= link_to "GitHub", "https://github.com/king601" %>. </p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-dark is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <%= ['hiker', 'mountain biker'].sample.humanize %>
+      </h1>
+      <h2 class="subtitle">
+        I enjoy the outdoors and getting time away from the computer,
+          as much as I like being on the computer.
+      </h2>
+    </div>
+  </div>
+</section> -->
