@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Andrew Fomera - Web Developer</title>
-    <link href='//fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <title>Andrew Fomera - Software Engineer</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Open Graph Info -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@AndrewFomera" />
     <% if content_for?(:title) %>
-    <meta name="twitter:title" content="<%= yield :title %>" />
+      <meta name="twitter:title" content="<%= yield :title %>" />
     <% end %>
     <% if content_for?(:meta_description) %>
       <meta name="twitter:description" content="<%= yield :meta_description %>" />
@@ -25,14 +24,11 @@
 
   <body>
     <!-- Render Header -->
-      <%= render 'layouts/header' %>
+    <%= render 'layouts/header' %>
     <!-- End of Header -->
     <% flash.each do |key, value| %>
       <div class="notice_wrapper">
-        <article class="message is-info">
-          <div class="message-header">
-            <button class="delete alert-close"></button>
-          </div>
+        <article class="message is-info is-small">
           <div class="message-body">
             <%= value %>
           </div>
