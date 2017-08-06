@@ -6,7 +6,8 @@
       </h1>
       <h2 class="subtitle">
         I am a Software Engineer currently living in Birmingham, Alabama.<br/>
-        Currently <%= link_to "@ProctorU", "https://proctoru.com", target: :blank %>
+        Currently <%= link_to "working @ ProctorU", "https://proctoru.com",
+          target: :blank %>
       </h2>
     </div>
   </div>
@@ -21,7 +22,7 @@
 
     <% @posts.each do |post| %>
       <h5><%= link_to post.title, post %></h5>
-      <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+      <p><%= post.created_at.strftime("%A, %b %d") %></p>
     <% end %>
 
       <%= link_to "View All Posts", posts_path, class: "button is-borered" %>

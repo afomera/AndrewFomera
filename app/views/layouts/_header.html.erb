@@ -24,17 +24,17 @@
   <div id="navbar-menu" class="navbar-menu">
     <div class="navbar-end">
       <%= link_to projects_path, class: "navbar-item" do %>
-        <%= fa_icon "th", text: ' Projects', class: 'emoji' %>
+        Projects
       <% end %>
       <%= link_to posts_path, class: "navbar-item"  do %>
-        <%= fa_icon "rss", text: ' Blog', class: 'emoji'  %>
+        Blog
       <% end %>
       <%= link_to new_contact_path, class: "navbar-item"  do %>
-        <%= fa_icon "envelope-o", text: ' Contact', class: 'emoji'  %>
+        Contact
       <% end %>
       <% if user_signed_in? %>
         <%= link_to destroy_user_session_path, method: :delete, class: 'navbar-item' do %>
-          <%= fa_icon "sign-out", text: 'Logout' %>
+          Logout
         <% end %>
       <% end %>
     </div>
