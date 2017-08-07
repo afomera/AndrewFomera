@@ -1,30 +1,35 @@
-<%= form_for @post, data: {behavior: 'post-form'} do |f| %>
-    <% if @post.errors.any? %>
-        <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
-        <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-        </ul>
+<div class="columns">
+  <div class="column">
+    <%= form_for @post, data: { behavior: "post-form" } do |f| %>
+      <% if @post.errors.any? %>
+          <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
+          <ul>
+              <% @post.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+          </ul>
+      <% end %>
+      <div class="field">
+        <%= f.label :title, class: "label" %>
+        <%= f.text_field :title, class: "control input"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :content, "Write your article here", class: "label" %>
+        <%= f.text_area :content, data: { behavior: "post-content" },
+          class: "control textarea" %>
+      </div>
+
+      <div class="field">
+        <%= f.submit "Publish", class: "button is-primary" %>
+        <%= f.submit "Save as Draft", class: "button is-bordered" %>
+      </div>
     <% end %>
+  </div>
 
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-
-    <br>
-    <br>
-
-    <%= f.label :content, "Write your article here" %><br>
-    <%= f.text_area :content, data: {behavior: 'post-content'} %>
-
-    <br>
-    <br>
-
-    <%= f.submit "Publish", class: "btn border" %>
-    <%= f.submit "Save as Draft" %>
-<% end %>
-<hr>
-<h3>Preview</h3>
-
-<div id="preview" data-behavior='post-preview'>
+  <div class="column">
+    <h2>Preview</h2>
+    <div id="preview" data-behavior='post-preview'>
+    </div>
+  </div>
 </div>

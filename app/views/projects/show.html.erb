@@ -1,23 +1,37 @@
-<div id="project_show_content" class="skinny_container container_padding">
-  <header>
-    <h1><%= @project.title %></h1>
-    <hr>
-  </header>
-  <div id="content">
-    <% if @project.has_thumbnail_image? %>
-      <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
-    <% end %>
-
-    <%= markdown @project.description %>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @project.title %>
+      </h1>
+    </div>
   </div>
-  <br />
-  <% if user_signed_in? && current_user.admin? %>
-		<div id="admin_links">
-			<%= link_to "Edit Project", edit_project_path(@project) %>
-			<%= link_to "Delete Project", project_path(@project), method: :delete, data: { confirm: "Are you sure you want to delete #{@project.title}?" } %>
-		</div>
-	<% end %>
+</section>
 
-  <hr>
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <% if @project.has_thumbnail_image? %>
+        <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
+      <% end %>
 
+      <%= markdown @project.description %>
+
+      <% if user_signed_in? && current_user.admin? %>
+        <nav class="level">
+          <div class="level-left"></div> <!-- Do not remove this level-left -->
+          <div class="level-right">
+            <p class="level-item">
+              <%= link_to "Edit Project", edit_project_path(@project),
+                class: "button is-light" %>
+              <%= link_to "Delete Project", project_path(@project),
+                method: :delete, data: {
+                  confirm: "Are you sure you want to delete #{@project.title}?"
+                }, class: "button is-danger" %>
+            </p>
+          </div>
+        </nav>
+      <% end %>
+    </div>
+  </div>
 </div>

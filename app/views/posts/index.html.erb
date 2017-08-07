@@ -1,32 +1,54 @@
-<h1 id="page_title">Things I have to say</h1>
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Blog
+      </h1>
+      <h2 class="subtitle">
+        Things I have to say.
+      </h2>
+    </div>
+  </div>
+</section>
 
-<div id="posts_container" class="skinny_container">
-  <% if user_signed_in? && current_user.admin? %>
-    <% @unpublished_posts.each do |unpublished_post| %>
-      <div class="draft">
-        <p class="date"><%= unpublished_post.created_at.strftime('%A, %B %d, %Y') %></p>
-        <h2><%= link_to unpublished_post.title, unpublished_post %></h2>
-        <hr>
-      </div>
-    <% end %>
-  <% end %>
 
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <% if @posts.empty? %>
+        <div class="card">
+          <div class="card-content">
+            <p class="title">
+              Whoops! No posts could be found!
+            </p>
+            <p class="subtitle">
+              Please check back soon.
+            </p>
+          </div>
+        </div>
+      <% end %>
 
-    <% if @posts.empty? %>
-      <div class="post">
-        <h4>Whoops! No posts could be found. <br />Please check back soon!</h4>
-      </div>
-    <% else %>
+      <% if user_signed_in? && current_user.admin? %>
+        <% @unpublished_posts.each do |unpublished_post| %>
+          <%= render "post", post: unpublished_post %>
+        <% end %>
+      <% end %>
 
-      <%= render @posts %>
+      <%= render(@posts) %>
 
-    <% end %>
+      <%= will_paginate @posts, renderer: BulmaPagination::Rails %>
 
-    <%= will_paginate @posts %>
-
-    <% if user_signed_in? && current_user.admin? %>
-      <div class="post">
-        <%= link_to "New Post", new_post_path, class: "button" %>
-      </div>
-    <% end %>
+      <% if user_signed_in? && current_user.admin? %>
+        <nav class="level">
+          <div class="level-left"></div> <!-- Do not remove this level-left -->
+          <div class="level-right">
+            <p class="level-item">
+              <%= link_to "New Post", new_post_path,
+                class: "button is-primary" %>
+            </p>
+          </div>
+        </nav>
+      <% end %>
+    </div>
+  </div>
 </div>

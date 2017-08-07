@@ -1,4 +1,21 @@
-<h1 id="page_title">New Post</h1>
-<div class="skinny_container container_padding">
-<%= render 'form' %>
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        New Post
+      </h1>
+      <h2 class="subtitle">
+        Write about something...
+          <%= ['interesting', 'fun', 'exciting'].sample %>.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <%= render "form" %>
+    </div>
+  </div>
 </div>

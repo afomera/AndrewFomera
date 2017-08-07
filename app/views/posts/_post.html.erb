@@ -1,5 +1,20 @@
-<div class="post">
-  <p class="date"><%= post.created_at.strftime('%A, %B %d, %Y') %></p>
-  <h2><%= link_to post.title, post %></h2>
-  <hr>
+<div class="card">
+  <header class="card-header">
+    <%= link_to post.title, post_path(post), class: "card-header-title" %>
+  </header>
+
+  <div class="card-content">
+    <div class="content">
+      <% if !post.published? %>
+        <div class="notification is-warning">
+          This post is a draft post and is currently not published.
+        </div>
+      <% else %>
+        <p>Posted on: <%= post.created_at.strftime('%A, %B %d, %Y') %></p>
+      <% end %>
+
+      <%= link_to "Read More", post_path(post), class: "button is-primary is-bordered" %>
+    </div>
+  </div>
 </div>
+<hr />

@@ -1,31 +1,72 @@
-<div class="container container_padding clearfix">
-  <div class="col-1 about">
-    <h3 class="title">About</h3>
-    <p>Hello I'm Andrew and I am a Software Engineer currently living in
-      <strong>Birmingham, Alabama.</strong></p>
-
-  <!--
-    <p>Are you hiring <strong>Junior Developers</strong>? I would love to <%= link_to "discuss how I can fit into your team", new_contact_path %>!
-      I am passionate about learning and am looking for opportunities to expand my skills. My resume can be found <%= link_to "here.", "/resume.pdf" %></p>
-  -->
-    <p>
-      I'm passionate about learning new things everyday and work to expand my skills. I'm a big fan of blogging or sharing what you're learning and strive to do so when possible.
-    </p>
-
-    <p>You can find me on <a href="https://twitter.com/AndrewFomera">Twitter</a> or on other social media sites by looking up Andrew Fomera.
-      If you like checking out code you can find me on <%= link_to "GitHub", "https://github.com/king601" %>. </p>
+<section class="hero is-large is-info is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Hello, I am Andrew.
+      </h1>
+      <h2 class="subtitle">
+        I am a Software Engineer currently living in Birmingham, Alabama.<br/>
+        Currently <%= link_to "working @ ProctorU", "https://proctoru.com",
+          target: :blank %>
+      </h2>
+    </div>
   </div>
-  <div class="col-2 homepage_content">
-    <h3 class="title">Recent Blog Posts</h3>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title">Recent Posts</h1>
+    <h2 class="subtitle">
+      Three of my most recent posts
+    </h2>
 
     <% @posts.each do |post| %>
-			<h4><%= link_to post.title, post %></h4>
-			<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
-		<% end %>
-    <% if @posts.empty? %>
-      <p>Sorry no posts were found. Check back soon!</p>
-    <% else %>
-      <%= link_to "View All Posts", posts_path, class: "btn bordered" %>
+      <h5><%= link_to post.title, post %></h5>
+      <p><%= post.created_at.strftime("%A, %b %d") %></p>
     <% end %>
+
+      <%= link_to "View All Posts", posts_path, class: "button is-borered" %>
   </div>
-</div>
+</section>
+
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Always striving for improvement
+      </h1>
+      <h2 class="subtitle">
+        I'm passionate about learning new things everyday and work to expand my skills.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Find me
+      </h1>
+      <h2 class="subtitle">
+      <p>You can find me on <a href="https://twitter.com/AndrewFomera">Twitter</a> or on other social media sites by looking up Andrew Fomera.</p>
+      <p>
+        If you like checking out code you can find me on <%= link_to "GitHub", "https://github.com/king601" %>.</p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-dark is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <%= ['hiker', 'mountain biker'].sample.humanize %>
+      </h1>
+      <h2 class="subtitle">
+        I enjoy the outdoors and getting time away from the computer,
+          as much as I like being on the computer.
+      </h2>
+    </div>
+  </div>
+</section> -->

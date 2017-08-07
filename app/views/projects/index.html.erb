@@ -1,32 +1,48 @@
-<h1 id="page_title">My Projects</h1>
-
-<div id="projects_list" class="skinny_container container_padding">
-
-  <% @projects.each do |project| %>
-    <div class="project">
-      <h2><%= link_to project.title, project_path(project) %></h2>
-      <!--<img src="http://placehold.it/468x128/0EBFE9">-->
-      <p class="description"><%= markdown truncate("#{project.description}", length: 80) %></p>
-      <br />
-      <%= link_to "Read More", project_path(project), class: "btn bordered" %>
-      <% if !project.link.empty? %>
-        <%= link_to "Visit #{project.title}", project.link, class: "btn bordered-light", target: "_blank" %>
-      <% end %>
-    <hr />
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        My Projects
+      </h1>
+      <h2 class="subtitle">
+        Things I have built or worked on.
+      </h2>
     </div>
-  <% end %>
-
-      <% if @projects.empty? %>
-        <div class="project">
-          <h4>Whoops! No projects could be found. <br />Please check back soon!</h4>
-        </div>
-      <% end %>
-
-      <%= will_paginate @projects %>
-
-      <% if user_signed_in? && current_user.admin? %>
-        <div class="project">
-          <%= link_to "New Project", new_project_path, class: "button" %>
-        </div>
-      <% end %>
   </div>
+</section>
+
+<div class="container container-content">
+  <div class="columns">
+    <div class="column">
+      <% if @projects.empty? %>
+        <div class="card">
+          <div class="card-content">
+            <p class="title">
+              Whoops! No projects could be found!
+            </p>
+            <p class="subtitle">
+              Please check back soon.
+            </p>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render(@projects) %>
+
+      <%= will_paginate @projects, renderer: BulmaPagination::Rails %>
+    </div>
+  </div>
+  <% if user_signed_in? && current_user.admin? %>
+      <div class="container">
+        <nav class="level">
+          <div class="level-left"></div> <!-- Do not remove this level-left -->
+          <div class="level-right">
+            <p class="level-item">
+              <%= link_to "New Project", new_project_path,
+                class: "button is-primary" %>
+            </p>
+          </div>
+        </nav>
+      </div>
+  <% end %>
+</div>
