@@ -5,7 +5,14 @@
 
   <div class="card-content">
     <div class="content">
-      Posted on: <%= post.created_at.strftime('%A, %B %d, %Y') %>
+      <% if !post.published? %>
+        <div class="notification is-warning">
+          This post is a draft post and is currently not published.
+        </div>
+      <% else %>
+        <p>Posted on: <%= post.created_at.strftime('%A, %B %d, %Y') %></p>
+      <% end %>
+
       <%= link_to "Read More", post_path(post), class: "button is-primary is-bordered" %>
     </div>
   </div>
