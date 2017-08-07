@@ -10,14 +10,13 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-
   # Add more helper methods to be used by all tests here...
 end
 
 class ActionDispatch::IntegrationTest
- # This allows us to use the sign_in and sign_out
- include Warden::Test::Helpers
- include Devise::Test::IntegrationHelpers
+  # This allows us to use the sign_in and sign_out
+  include Warden::Test::Helpers
+  include Devise::Test::IntegrationHelpers
 end
 
 class Capybara::Rails::TestCase
