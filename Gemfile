@@ -33,7 +33,7 @@ gem 'will_paginate-bulma'
 
 group :development do
   # Use Capistrano for deployment
-  gem 'capistrano', '3.8.0'
+  gem 'capistrano', '3.9.0'
   gem 'capistrano-bundler', '~> 1.2.0'
   gem 'capistrano-rails', '~> 1.2.3'
   gem 'capistrano-passenger', '~> 0.2.0'
