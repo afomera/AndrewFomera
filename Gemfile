@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.5'
+gem 'rails', '~> 5.1.3'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3'
@@ -22,7 +22,7 @@ gem 'will_paginate', '~> 3.1.5'
 gem 'pygments.rb', '~> 1.0'
 gem 'redcarpet', '~> 3.3.4'
 gem 'friendly_id', '~> 5.2.0'
-gem 'mail_form', github: "king601/mail_form"
+gem 'mail_form'# , github: "king601/mail_form"
 gem 'devise', '~> 4.2'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
@@ -38,17 +38,19 @@ group :development do
   gem 'capistrano-rails', '~> 1.2.3'
   gem 'capistrano-passenger', '~> 0.2.0'
   gem 'capistrano-rbenv', '~> 2.1'
-  gem 'puma', '~> 3'
+  gem 'puma', '~> 3.7'
 
   gem 'web-console', '~> 3.5.0'
 end
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
   gem 'listen', '~> 3.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'minitest-focus', '~> 1.1', '>= 1.1.2'
   gem 'minitest-rails', '~> 3.0'
-  gem 'minitest-rails-capybara', '~> 3.0'
 end

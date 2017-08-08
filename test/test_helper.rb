@@ -1,7 +1,5 @@
-ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-require 'minitest/rails/capybara'
 require 'minitest/pride'
 require 'minitest/focus'
 
@@ -15,11 +13,6 @@ end
 
 class ActionDispatch::IntegrationTest
   # This allows us to use the sign_in and sign_out
-  include Warden::Test::Helpers
-  include Devise::Test::IntegrationHelpers
-end
-
-class Capybara::Rails::TestCase
   include Warden::Test::Helpers
   include Devise::Test::IntegrationHelpers
 end
