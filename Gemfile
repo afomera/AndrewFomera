@@ -21,7 +21,7 @@ gem 'font-awesome-rails'
 gem 'will_paginate', '~> 3.1.6'
 gem 'pygments.rb', '~> 1.0'
 gem 'redcarpet', '~> 3.4.0'
-gem 'friendly_id', '~> 5.2.0'
+gem 'friendly_id', '~> 5.2.2'
 gem 'mail_form'# , github: "king601/mail_form"
 gem 'devise', '~> 4.2'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
