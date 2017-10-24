@@ -178,7 +178,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.21.0)
     public_suffix (2.0.5)
-    puma (3.9.1)
+    puma (3.10.0)
     pygments.rb (1.1.2)
       multi_json (>= 1.0.0)
     rack (2.0.3)
@@ -298,7 +298,7 @@ DEPENDENCIES
   minitest-focus (~> 1.1, >= 1.1.2)
   minitest-rails (~> 3.0)
   pg
-  puma (~> 3.9)
+  puma (~> 3.10)
   pygments.rb (~> 1.0)
   rails (~> 5.1.4)
   redcarpet (~> 3.4.0)
