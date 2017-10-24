@@ -38,7 +38,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.3.0'
   gem 'capistrano-passenger', '~> 0.2.0'
   gem 'capistrano-rbenv', '~> 2.1'
-  gem 'puma', '~> 3.9'
+  gem 'puma', '~> 3.10'
 
   gem 'web-console', '~> 3.5.1'
 end
