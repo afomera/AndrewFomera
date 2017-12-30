@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/ProctorU/hootstrap.git
+  revision: a56a3ec465575b21db21eb4bb34962dad968f53d
+  branch: fix/custom-file-text-scss-var
+  specs:
+    hootstrap (0.1.6)
+      bootstrap (~> 4.0.0.beta)
+      rails (>= 4.2.0)
+      sass-rails
+
+GIT
   remote: https://github.com/refile/refile-mini_magick.git
   revision: 27b6c6c7affcc302a59068b8b3f458cb147c2fa6
   specs:
@@ -137,10 +147,6 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    hootstrap (0.1.6)
-      bootstrap (~> 4.0.0.beta)
-      rails (>= 4.2.0)
-      sass-rails
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.1)
@@ -306,7 +312,7 @@ DEPENDENCIES
   devise (~> 4.3)
   font-awesome-rails
   friendly_id (~> 5.2.0)
-  hootstrap
+  hootstrap!
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.1)
