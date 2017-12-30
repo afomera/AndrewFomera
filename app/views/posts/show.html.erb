@@ -1,6 +1,16 @@
 <% page_title "#{@post.title}" %>
 <% meta_description "#{@post.content}" %>
 
+<% unless @post.published? # If it's not published... %>
+  <div class="mt-2 alert alert-warning" role="alert">
+    You are viewing a draft post! -- Please do not share this post.
+    <% if user_signed_in? && current_user.admin? %>
+      <%= link_to "Publish this Post", publish_post_path(@post),
+        method: :patch, class: "alert-link" %>
+    <% end %>
+  </div>
+<% end %>
+
 <section class="hero is-dark">
   <div class="hero-body">
     <div class="container">
@@ -13,16 +23,6 @@
     </div>
   </div>
 </section>
-
-<% unless @post.published? # If it's not published... %>
-  <div class="notification is-warning">
-    You are viewing a draft post! -- Please do not share this post.
-    <% if user_signed_in? && current_user.admin? %>
-      <%= link_to "Publish this Post", publish_post_path(@post),
-        method: :patch, class: "button is-light" %>
-    <% end %>
-  </div>
-<% end %>
 
 <div class="container container-content">
   <div class="columns">
