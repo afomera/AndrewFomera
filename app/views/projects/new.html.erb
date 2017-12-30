@@ -1,20 +1,23 @@
-<section class="hero is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        New Project
-      </h1>
-      <h2 class="subtitle">
-        Add a project you've built.
-      </h2>
-    </div>
-  </div>
-</section>
+<div class="page-heading">
+  <h4 class="page-title">New Project</h4>
+</div>
 
-<div class="container container-content">
-  <div class="columns">
-    <div class="column">
-      <%= render "form" %>
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <%= link_to(projects_path,
+      class: "card card-link mb-3") do %>
+      <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+        <i class="mr-3" data-feather="arrow-left"></i>
+        <h6 class="mb-0">Projects</h6>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <div class="card card-body mb-3">
+      <%= render("form", project: @project) %>
     </div>
   </div>
 </div>
