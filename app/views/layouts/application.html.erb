@@ -2,9 +2,7 @@
 <html>
   <head>
     <title>Andrew Fomera - Software Engineer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <%= render("shared/meta-tags") %>
 
     <!-- Open Graph Info -->
     <meta name="twitter:card" content="summary" />
@@ -16,19 +14,13 @@
       <meta name="twitter:description" content="<%= yield :meta_description %>" />
     <% end %>
     <meta name="twitter:creator" content="@AndrewFomera" />
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
   </head>
 
   <body class="<%= body_classes %>">
     <%= render('shared/navbar') %>
     <%= render('shared/flash/app') %>
 
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
 
     <%= render('shared/footer')%>
   </body>
