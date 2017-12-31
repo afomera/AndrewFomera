@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-12">
+      <ul class="nav justify-content-end">
+        <%= link_to "Projects", projects_path, class: "nav-item nav-link" %>
+        <%= link_to "Blog", posts_path, class: "nav-item nav-link" %>
+        <%= link_to "Email", new_contact_path, class: "nav-item nav-link" %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <%= image_tag('andrew.jpg', class: 'img-thumbnail img-fluid') %>
+    </div>
+    <div class="col-lg-6 align-items-center justify-content-center d-flex">
+      <div class="text-center">
+        <%= render("shared/flash/card") %>
+        <h3>Hey there, I'm Andrew Fomera 🙌.</h3>
+        <h5 class="text-muted">
+          I'm a full-stack Software Engineer.
+          I currently <%= link_to "work @ ProctorU.", "https://proctoru.com",
+            target: :blank %>
+        </h5>
+
+        <%= link_to "Learn More", posts_path, class: "mt-2 btn btn-lg btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

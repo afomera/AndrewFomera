@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :projects
-  root 'pages#home'
+  root 'welcome#index'
 end

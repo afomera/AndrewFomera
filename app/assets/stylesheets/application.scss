@@ -1,97 +1,195 @@
+@import 'hootstrap';
+@import 'font-awesome';
+@import 'pygments';
+@import 'andrewfomera/variables';
 
- @import "bulma";
- @import "font-awesome";
- @import "pygments";
- @import "andrewfomera/variables";
+// Footer
+$footer-height: 164px;
 
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  p, li {
-    line-height: 1.55;
-  }
-  p, ul, ol {
-    margin: 0 0 1em 0;
-  }
-  ul, ol {
-    padding-left: 1em;
-  }
-  .wrapper {
-   flex: 1;
+html {
+  font-size: 14px;
+  min-height: 100%;
+  position: relative;
+}
+
+html,
+body,
+input,
+button,
+select,
+textarea {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hr-sect {
+  align-items: center;
+  color: $gray-400;
+  display: flex;
+  flex-basis: 100%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+
+  &::before,
+  &::after {
+    background: $border-color;
+    content: "";
+    flex-grow: 1;
+    font-size: 0;
+    height: 1px;
+    line-height: 0;
   }
 
-  .pagination {
-    padding-bottom: 1em;
+  &::before {
+    margin-right: 0.5rem;
   }
 
-  .level {
-    padding-bottom: 2em;
+  &::after {
+    margin-left: 0.5rem;
+  }
+}
+
+.hr-dots {
+  border-color: $border-color;
+  border-image-repeat: round;
+  border-image-slice: 33% 33%;
+  border-image-source: asset-url('dots.svg');
+  border-style: dotted;
+  border-width: 8px 0 0 0;
+  height: 8px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  position: relative;
+  top: 8px;
+}
+
+.logged-in,
+.logged-out {
+  margin-bottom: $footer-height;
+}
+
+a.card {
+  color: inherit;
+  position: relative;
+  text-decoration: none;
+}
+
+.card-link {
+  transition: all $base-duration $base-timing;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.table {
+  td {
+    vertical-align: middle;
   }
 
-  .navbar-brand {
-    font-weight: bold;
-    font-size: 24px;
+  .td-actions {
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+.table-border-around {
+  border: 1px solid $table-border-color;
+}
+
+.blankslate {
+  padding: ($spacer * 2);
+  position: relative;
+  text-align: center;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.blankslate-title {
+  font-size: 1.25rem;
+  margin-bottom: $spacer;
+}
+
+.page-heading {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+
+  .page-title {
   }
 
-  .container-content {
-    padding-top: 2em;
+  .page-subtitle {
+    margin-bottom: 0;
   }
+}
 
-  h1, h2, h3, h4, h5, h6, p, ul, li {
+.footer {
+  background-color: $white;
+  bottom: 0;
+  box-shadow: $box-shadow;
+  height: $footer-height;
+  position: absolute;
+  width: 100%;
+
+  .footer-link {
+    .footer-logo {
+      transition: all $base-duration $base-timing;
+    }
+
+    &:hover .footer-logo {
+      transform: scale(1.02);
+    }
+
+    &:active .footer-logo {
+      transform: scale(0.98);
+    }
+  }
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#share_box {
+  text-align: center;
+  p {
+    padding: 0 0 1em 0;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
     color: $dark;
+    font-size: 1em;
   }
-  h1 {
-    font-size: 2.5rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  h3 {
-    font-size: 1.75rem;
-  }
-  h4 {
-    font-size: 1.375rem;
-  }
-  h5 {
-    font-size: 1.25rem;
-  }
-  h6 {
-    font-size: 1rem;
-  }
-  #share_box {
-    text-align: center;
-    p {
-        padding: 0 0 1em 0;
-        margin: 0;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $dark;
-        font-size: 1em;
-    }
-    i {
-        color: $dark;
-        padding: 1em 1.5em;
-        &:hover {
-            color: $primary;
-            cursor: pointer;
-        }
+  i {
+    color: $dark;
+    padding: 1em 1.5em;
+    &:hover {
+      color: $primary;
+      cursor: pointer;
     }
   }
+}
 
-  .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      padding-top: 30px; height: 0; overflow: hidden;
-  }
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
 
-  .video-container iframe,
-  .video-container object,
-  .video-container embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-  }
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

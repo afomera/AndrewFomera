@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.4'
+gem 'webpacker', '~> 3.0'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3'
@@ -28,8 +29,8 @@ gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 
-gem 'bulma-rails'
-gem 'will_paginate-bulma'
+gem 'hootstrap', github: 'ProctorU/hootstrap', branch: 'fix/custom-file-text-scss-var'
+gem 'will_paginate-bootstrap4'
 
 group :development do
   # Use Capistrano for deployment

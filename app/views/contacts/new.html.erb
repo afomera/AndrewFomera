@@ -1,48 +1,34 @@
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Get in touch
-      </h1>
-      <h2 class="subtitle">
-        Have a project in mind? Want to work together? Get in touch and we'll make things happen.
-      </h2>
-    </div>
-  </div>
-</section>
+<div class="page-heading">
+  <h4 class="page-title">Send me an email</h4>
+</div>
 
-<div class="container container-content">
-  <div class="columns">
-    <div class="column">
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <div class="card card-body mb-3">
       <%= form_for @contact do |f| %>
-        <div class="field">
-          <%= f.label :name, class: "label" %>
-          <%= f.text_field :name, required: true, class: "control input" %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, required: true, class: "form-control" %>
         </div>
 
-        <div class="field">
-          <%= f.label :email, class: "label" %>
-          <%= f.email_field :email, required: true, class: "control input" %>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, required: true, class: "form-control" %>
         </div>
 
-        <div class="field">
-          <%= f.label :message, class: "label" %>
-          <%= f.text_area :message, as: :text, class: "control textarea" %>
+        <div class="form-group">
+          <%= f.label :message %>
+          <%= f.text_area :message, as: :text, class: "form-control" %>
         </div>
 
-        <div class="field is-hidden">
-          <%= f.label :nickname, class: "label" %>
+        <div hidden class="form-group">
+          <%= f.label :nickname %>
           <%= f.text_field :nickname, hint: 'leave this field blank',
-            class: "control input" %>
+            class: "form-control" %>
         </div>
 
-        <%= f.submit "Send Message", class: "button is-primary" %>
+        <%= f.submit "Send Message", class: "btn btn-primary" %>
       <% end %>
-
-      <nav class="level">
-        <div class="level-left"></div> <!-- Do not remove this level-left -->
-        <div class="level-right"></div>
-      </nav>
     </div>
   </div>
 </div>

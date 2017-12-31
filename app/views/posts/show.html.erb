@@ -1,63 +1,75 @@
 <% page_title "#{@post.title}" %>
 <% meta_description "#{@post.content}" %>
 
-<section class="hero is-dark">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        <%= @post.title %>
-      </h1>
-      <h2 class="subtitle">
-        <%= @post.created_at.strftime('%A, %B %d, %Y') %>
-      </h2>
-    </div>
-  </div>
-</section>
+<div class="page-heading">
+  <h4 class="page-title"><%= @post.title %></h4>
+  <h6 class="page-subtitle"><%= @post.created_at.strftime('%A, %B %d, %Y') %></h6>
+</div>
 
-<% unless @post.published? # If it's not published... %>
-  <div class="notification is-warning">
-    You are viewing a draft post! -- Please do not share this post.
-    <% if user_signed_in? && current_user.admin? %>
-      <%= link_to "Publish this Post", publish_post_path(@post),
-        method: :patch, class: "button is-light" %>
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <%= link_to(posts_path,
+      class: "card card-link mb-3") do %>
+      <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+        <i class="mr-3" data-feather="arrow-left"></i>
+        <h6 class="mb-0">Back</h6>
+      </div>
     <% end %>
   </div>
-<% end %>
+</div>
 
-<div class="container container-content">
-  <div class="columns">
-    <div class="column">
-      <%= markdown @post.content %>
-
-      <% if user_signed_in? && current_user.admin? %>
-        <nav class="level">
-          <div class="level-left"></div> <!-- Do not remove this level-left -->
-          <div class="level-right">
-            <p class="level-item">
-              <%= link_to "Edit Article", edit_post_path(@post),
-                class: "button is-light" %>
-              <%= link_to "Delete Article", post_path(@post),
-                method: :delete, data: {
-                  confirm: "Are you sure you want to delete #{@post.title}?"
-                }, class: "button is-danger" %>
-            </p>
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <div class="card mb-3">
+      <div class="card-body">
+        <% unless @post.published? # If it's not published... %>
+          <div class="mt-2 alert alert-warning" role="alert">
+            You are viewing a draft post! -- Please do not share this post.
+            <% if user_signed_in? && current_user.admin? %>
+              <%= link_to "Publish this Post", publish_post_path(@post),
+                method: :patch, class: "alert-link" %>
+            <% end %>
           </div>
-        </nav>
-      <% end %>
+        <% end %>
 
-      <hr>
-
-      <div id="share_box">
-        <p>Share <%= @post.title %></p>
-        <!-- Twitter -->
-          <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @AndrewFomera - &amp;url=<%= post_url([@post]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
-        <!-- Facebook -->
-          <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
-        <!-- Google Plus -->
-          <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+        <%= markdown @post.content %>
       </div>
-      <hr>
+      <div class="card-footer">
+        <div id="share_box">
+          <p>Share <%= @post.title %></p>
+            <!-- Twitter -->
+            <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @AndrewFomera - &amp;url=<%= post_url([@post]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
+            <!-- Facebook -->
+            <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
+            <!-- Google Plus -->
+            <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= post_url(@post) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+          </div>
       </div>
     </div>
   </div>
 </div>
+
+<% if user_signed_in? && current_user.admin? %>
+  <div class="row">
+    <div class="col-sm-4 offset-md-2">
+      <%= link_to(edit_post_path(@post),
+        class: "card card-link mb-3") do %>
+        <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+          <i class="mr-3" data-feather="arrow-left"></i>
+          <h6 class="mb-0">Edit</h6>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <%= link_to(post_path(@post),
+        method: :delete, data: {
+          confirm: "Are you sure you want to delete #{@post.title}?"
+        }, class: "card card-link mb-3") do %>
+        <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+          <i class="mr-3" data-feather="trash-2"></i>
+          <h6 class="mb-0">Delete</h6>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

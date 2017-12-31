@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Andrew Fomera - Software Engineer</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= render("shared/meta-tags") %>
+
     <!-- Open Graph Info -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@AndrewFomera" />
@@ -13,34 +14,14 @@
       <meta name="twitter:description" content="<%= yield :meta_description %>" />
     <% end %>
     <meta name="twitter:creator" content="@AndrewFomera" />
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-    <script src="https://use.typekit.net/ehb4vzd.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
 
-  <body>
-    <!-- Render Header -->
-    <%= render 'layouts/header' %>
-    <!-- End of Header -->
-    <% flash.each do |key, value| %>
-      <div class="notice_wrapper">
-        <article class="message is-info is-small">
-          <div class="message-body">
-            <%= value %>
-          </div>
-        </article>
-      </div>
-    <% end %>
+  <body class="<%= body_classes %>">
+    <%= render('shared/navbar') %>
+    <%= render('shared/flash/app') %>
 
-    <div class="wrapper">
-      <%= yield %>
-    </div>
+    <%= yield %>
 
-    <!-- Render Footer -->
-    <%= render 'layouts/footer' %>
-    <!-- End of Footer -->
+    <%= render('shared/footer')%>
   </body>
 </html>
