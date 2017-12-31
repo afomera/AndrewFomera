@@ -20,7 +20,7 @@
 
 <div class="row">
   <div class="col-md-10 offset-md-1">
-    <div class="card">
+    <div class="card mb-3">
       <div class="card-body">
         <% unless @post.published? # If it's not published... %>
           <div class="mt-2 alert alert-warning" role="alert">
@@ -34,7 +34,7 @@
 
         <%= markdown @post.content %>
       </div>
-      <div class="card-footer mb-3">
+      <div class="card-footer">
         <div id="share_box">
           <p>Share <%= @post.title %></p>
             <!-- Twitter -->
@@ -50,10 +50,10 @@
 </div>
 
 <% if user_signed_in? && current_user.admin? %>
-  <div class="row mt-2">
+  <div class="row">
     <div class="col-sm-4 offset-md-2">
       <%= link_to(edit_post_path(@post),
-        class: "card card-link mb-2") do %>
+        class: "card card-link mb-3") do %>
         <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
           <i class="mr-3" data-feather="arrow-left"></i>
           <h6 class="mb-0">Edit</h6>
@@ -64,7 +64,7 @@
       <%= link_to(post_path(@post),
         method: :delete, data: {
           confirm: "Are you sure you want to delete #{@post.title}?"
-        }, class: "card card-link mb-2") do %>
+        }, class: "card card-link mb-3") do %>
         <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
           <i class="mr-3" data-feather="trash-2"></i>
           <h6 class="mb-0">Delete</h6>
