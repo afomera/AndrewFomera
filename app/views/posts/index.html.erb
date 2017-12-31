@@ -1,54 +1,43 @@
-<section class="hero is-dark">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Blog
-      </h1>
-      <h2 class="subtitle">
-        Things I have to say.
-      </h2>
-    </div>
-  </div>
-</section>
+<div class="page-heading">
+  <h4 class="page-title">Blog Posts</h4>
+</div>
 
-
-<div class="container container-content">
-  <div class="columns">
-    <div class="column">
-      <% if @posts.empty? %>
-        <div class="card">
-          <div class="card-content">
-            <p class="title">
-              Whoops! No posts could be found!
-            </p>
-            <p class="subtitle">
-              Please check back soon.
-            </p>
-          </div>
+<% if user_signed_in? && current_user.admin? %>
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <%= link_to(new_post_path,
+        class: "card card-link mb-2") do %>
+        <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+          <i class="mr-3" data-feather="arrow-left"></i>
+          <h6 class="mb-0">Write a new Post</h6>
         </div>
       <% end %>
-
-      <% if user_signed_in? && current_user.admin? %>
-        <% @unpublished_posts.each do |unpublished_post| %>
-          <%= render "post", post: unpublished_post %>
-        <% end %>
-      <% end %>
-
-      <%= render(@posts) %>
-
-      <%= will_paginate @posts, renderer: BulmaPagination::Rails %>
-
-      <% if user_signed_in? && current_user.admin? %>
-        <nav class="level">
-          <div class="level-left"></div> <!-- Do not remove this level-left -->
-          <div class="level-right">
-            <p class="level-item">
-              <%= link_to "New Post", new_post_path,
-                class: "button is-primary" %>
-            </p>
-          </div>
-        </nav>
-      <% end %>
     </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <% if @posts.empty? %>
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+            Whoops! No posts could be found!
+          </p>
+          <p class="subtitle">
+            Please check back soon.
+          </p>
+        </div>
+      </div>
+    <% end %>
+
+    <% if user_signed_in? && current_user.admin? %>
+      <% @unpublished_posts.each do |unpublished_post| %>
+        <%= render "post", post: unpublished_post %>
+      <% end %>
+    <% end %>
+
+    <%= render(@posts) %>
+    <%= will_paginate @posts, renderer: BulmaPagination::Rails %>
   </div>
 </div>

@@ -1,37 +1,54 @@
-<section class="hero is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        <%= @project.title %>
-      </h1>
-    </div>
+<div class="page-heading">
+  <h4 class="page-title"><%= @project.title %></h4>
+</div>
+
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <%= link_to(projects_path,
+      class: "card card-link mb-3") do %>
+      <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+        <i class="mr-3" data-feather="arrow-left"></i>
+        <h6 class="mb-0">Back</h6>
+      </div>
+    <% end %>
   </div>
-</section>
+</div>
 
-<div class="container container-content">
-  <div class="columns">
-    <div class="column">
-      <% if @project.has_thumbnail_image? %>
-        <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
-      <% end %>
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <div class="card">
+      <div class="card-body">
+        <% if @project.has_thumbnail_image? %>
+          <%= image_tag(attachment_url(@project, :thumbnail_image, :fill, 768, 180)) %>
+        <% end %>
 
-      <%= markdown @project.description %>
-
-      <% if user_signed_in? && current_user.admin? %>
-        <nav class="level">
-          <div class="level-left"></div> <!-- Do not remove this level-left -->
-          <div class="level-right">
-            <p class="level-item">
-              <%= link_to "Edit Project", edit_project_path(@project),
-                class: "button is-light" %>
-              <%= link_to "Delete Project", project_path(@project),
-                method: :delete, data: {
-                  confirm: "Are you sure you want to delete #{@project.title}?"
-                }, class: "button is-danger" %>
-            </p>
-          </div>
-        </nav>
-      <% end %>
+        <%= markdown @project.description %>
+      </div>
     </div>
   </div>
 </div>
+
+<% if user_signed_in? && current_user.admin? %>
+<div class="row my-2">
+  <div class="col-sm-4 offset-md-2">
+    <%= link_to(edit_project_path(@project),
+      class: "card card-link mb-2") do %>
+      <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+        <i class="mr-3" data-feather="arrow-left"></i>
+        <h6 class="mb-0">Edit</h6>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-sm-4">
+    <%= link_to(project_path(@project),
+      method: :delete, data: {
+        confirm: "Are you sure you want to delete #{@project.title}?"
+      }, class: "card card-link mb-2") do %>
+      <div class="card-body text-muted text-center d-flex align-items-center justify-content-center">
+        <i class="mr-3" data-feather="trash-2"></i>
+        <h6 class="mb-0">Delete</h6>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
