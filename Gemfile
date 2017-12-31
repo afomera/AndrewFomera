@@ -30,9 +30,7 @@ gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 
 gem 'hootstrap', github: 'ProctorU/hootstrap', branch: 'fix/custom-file-text-scss-var'
-
-gem 'bulma-rails'
-gem 'will_paginate-bulma'
+gem 'will_paginate-bootstrap4'
 
 group :development do
   # Use Capistrano for deployment
