@@ -24,7 +24,7 @@ gem 'pygments.rb', '~> 1.0'
 gem 'redcarpet', '~> 3.4.0'
 gem 'friendly_id', '~> 5.2.0'
 gem 'mail_form'# , github: "king601/mail_form"
-gem 'devise', '~> 4.3'
+gem 'devise', '~> 4.4'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
@@ -47,7 +47,7 @@ end
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.15'
+  gem 'capybara', '~> 2.17'
   gem 'selenium-webdriver'
   gem 'listen', '~> 3.1'
   gem 'spring'
