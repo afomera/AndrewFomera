@@ -1,10 +1,9 @@
 GIT
   remote: https://github.com/ProctorU/hootstrap.git
-  revision: a56a3ec465575b21db21eb4bb34962dad968f53d
-  branch: fix/custom-file-text-scss-var
+  revision: 561a622efe3edbc60ed8dd0fe57d80aba4bf5d55
   specs:
-    hootstrap (0.1.6)
-      bootstrap (~> 4.0.0.beta)
+    hootstrap (0.3.0)
+      bootstrap (~> 4.0)
       rails (>= 4.2.0)
       sass-rails
 
@@ -84,13 +83,13 @@ GEM
     airbrussh (1.3.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
-    autoprefixer-rails (7.2.3)
+    autoprefixer-rails (8.2.0)
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
-    bootstrap (4.0.0.beta3)
+    bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.3, < 2)
+      popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     builder (3.2.3)
     byebug (9.0.6)
@@ -343,4 +342,4 @@ DEPENDENCIES
   will_paginate-bootstrap4
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
