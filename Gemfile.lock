@@ -27,15 +27,15 @@ GIT
 
 GIT
   remote: https://github.com/sinatra/sinatra.git
-  revision: 8fdd35c731ec6915bae393c6383b2357450665f0
+  revision: 44660b99a010c3b70d237bbd0dedb95cb739089d
   branch: master
   specs:
-    rack-protection (2.0.0.rc2)
+    rack-protection (2.0.1)
       rack
-    sinatra (2.0.0.rc2)
+    sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.0.rc2)
+      rack-protection (= 2.0.1)
       tilt (~> 2.0)
 
 GEM
@@ -180,7 +180,7 @@ GEM
       minitest (~> 5.8)
       railties (~> 5.0)
     multi_json (1.12.1)
-    mustermann (1.0.0)
+    mustermann (1.0.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
@@ -195,7 +195,7 @@ GEM
     puma (3.11.3)
     pygments.rb (1.1.2)
       multi_json (>= 1.0.0)
-    rack (2.0.3)
+    rack (2.0.4)
     rack-proxy (0.6.3)
       rack
     rack-test (0.8.2)
