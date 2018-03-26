@@ -140,7 +140,7 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
-    friendly_id (5.2.1)
+    friendly_id (5.2.3)
       activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -313,7 +313,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.4)
   font-awesome-rails
-  friendly_id (~> 5.2.0)
+  friendly_id (~> 5.2.3)
   hootstrap!
   jbuilder (~> 2.7)
   jquery-rails
