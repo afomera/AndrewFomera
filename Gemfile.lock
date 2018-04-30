@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/sinatra/sinatra.git
-  revision: 3fa1f2c22836b75d86a5c3c14ad319b2806b033e
+  revision: 83a2a6951f398f31974bb1f2bd3c4d7ea6333395
   branch: master
   specs:
     rack-protection (2.0.1)
@@ -199,7 +199,7 @@ GEM
     puma (3.11.4)
     pygments.rb (1.1.2)
       multi_json (>= 1.0.0)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-proxy (0.6.3)
       rack
     rack-test (1.0.0)
