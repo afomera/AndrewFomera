@@ -41,7 +41,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'puma', '~> 3.11'
 
-  gem 'web-console', '~> 3.6.0'
+  gem 'web-console', '~> 3.6.2'
 end
 
 group :development, :test do
