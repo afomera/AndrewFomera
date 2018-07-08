@@ -33,14 +33,7 @@ gem 'hootstrap', github: 'ProctorU/hootstrap'
 gem 'will_paginate-bootstrap4'
 
 group :development do
-  # Use Capistrano for deployment
-  gem 'capistrano', '3.10.2'
-  gem 'capistrano-bundler', '~> 1.2.0'
-  gem 'capistrano-rails', '~> 1.3.0'
-  gem 'capistrano-passenger', '~> 0.2.0'
-  gem 'capistrano-rbenv', '~> 2.1'
   gem 'puma', '~> 3.11'
-
   gem 'web-console', '~> 3.6.2'
 end
 
