@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/ProctorU/hootstrap.git
-  revision: 15a18716cdaac960154d6dff7fbb3dc498c3a23f
+  revision: 3ebf3ff69bd5fb581ee344bbb57bc5dce631840e
   specs:
-    hootstrap (0.3.0)
-      bootstrap (~> 4.0)
+    hootstrap (0.4.0)
+      bootstrap (~> 4.0.0)
       rails (>= 4.2.0)
       sass-rails
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: b67f57d166da77c48d67ba0107c2369e6ef12433
+  revision: e9acf2cbd9263be18f0081aa772520dea8b89eea
   branch: 5-2-stable
   specs:
     actioncable (5.2.0)
@@ -114,7 +114,7 @@ GEM
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
-    bootstrap (4.1.1)
+    bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
