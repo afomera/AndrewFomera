@@ -1,7 +1,7 @@
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/pride'
-require 'minitest/focus'
+# require 'minitest/focus'
 
 class ActiveSupport::TestCase
   include ActiveJob::TestHelper

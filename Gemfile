@@ -5,11 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.2.0', github: 'rails/rails', branch: '5-2-stable'
+gem 'rails', github: "rails/rails", branch: "master"
 gem 'webpacker', '~> 3.0'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3'
+gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -34,7 +34,7 @@ gem 'will_paginate-bootstrap4'
 
 group :development do
   gem 'puma', '~> 3.11'
-  gem 'web-console', '~> 3.6.2'
+  gem 'web-console', github: 'rails/web-console'
 end
 
 group :development, :test do
@@ -45,6 +45,6 @@ group :development, :test do
   gem 'listen', '~> 3.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'minitest-focus', '~> 1.1', '>= 1.1.2'
-  gem 'minitest-rails', '~> 3.0'
+  # gem 'minitest-focus', '~> 1.1', '>= 1.1.2'
+  # gem 'minitest-rails', '~> 3.0'
 end
