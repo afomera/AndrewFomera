@@ -1,9 +1,13 @@
 class ContactsController < ApplicationController
   def new
-    @contact = Contact.new
+    flash[:danger] = "Sorry, the email me functionality has been removed."
+    redirect_to root_path
+    # @contact = Contact.new
   end
 
   def create
+    flash[:danger] = "Sorry, the email me functionality has been removed."
+    redirect_to root_path
      @contact = Contact.new(contacts_params)
      @contact.request = request
      if @contact.deliver

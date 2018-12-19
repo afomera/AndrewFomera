@@ -11,12 +11,11 @@
         <%= link_to projects_path, class: "nav-item nav-link" do %>
           Projects
         <% end %>
+
         <%= link_to posts_path, class: "nav-item nav-link"  do %>
           Blog
         <% end %>
-        <%= link_to new_contact_path, class: "nav-item nav-link"  do %>
-          Email
-        <% end %>
+
         <% if user_signed_in? %>
           <%= link_to destroy_user_session_path, method: :delete, class: "nav-item nav-link" do %>
             Logout
