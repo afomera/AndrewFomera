@@ -33,7 +33,7 @@ gem 'hootstrap', github: 'ProctorU/hootstrap'
 gem 'will_paginate-bootstrap4'
 
 group :development do
-  gem 'puma', '~> 3.11'
+  gem 'puma', '~> 3.12'
   gem 'web-console', '~> 3.6.2'
 end
 

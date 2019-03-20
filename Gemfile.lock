@@ -207,7 +207,7 @@ GEM
     pg (0.21.0)
     popper_js (1.14.5)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.1)
     pygments.rb (1.2.1)
       multi_json (>= 1.0.0)
     rack (2.0.6)
@@ -313,7 +313,7 @@ DEPENDENCIES
   minitest-focus (~> 1.1, >= 1.1.2)
   minitest-rails (~> 3.0)
   pg
-  puma (~> 3.11)
+  puma (~> 3.12)
   pygments.rb (~> 1.2)
   rails (~> 5.2.0)!
   redcarpet (~> 3.4.0)
