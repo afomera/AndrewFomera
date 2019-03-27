@@ -24,7 +24,7 @@ gem 'pygments.rb', '~> 1.2'
 gem 'redcarpet', '~> 3.4.0'
 gem 'friendly_id', '~> 5.2.4'
 gem 'mail_form'# , github: "king601/mail_form"
-gem 'devise', '~> 4.4'
+gem 'devise', '~> 4.6'
 gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
